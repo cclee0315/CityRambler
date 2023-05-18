@@ -1,0 +1,190 @@
+@font-face{
+    font-family: 'Glow Sans TC Wide ExtraBold';
+    src: url(../font/GlowSansTC-Wide-ExtraBold.otf);
+}
+@font-face{
+    font-family: 'Glow Sans TC Wide Heavy';
+    src: url(../font/GlowSansTC-Wide-Heavy.otf);
+}
+@font-face {
+    font-family: 'Glow Sans TC Wide Bold';
+    src: url(../font/GlowSansTC-Wide-Bold.otf);
+}
+@font-face {
+    font-family: 'Glow Sans TC Wide Light';
+    src: url(../font/GlowSansTC-Wide-Light.otf);
+}
+@font-face {
+    font-family: 'Glow Sans TC Normal Bold';
+    src: url(../font/GlowSansTC-Normal-Bold.otf);
+}
+@font-face {
+    font-family: 'Glow Sans TC Normal Regular';
+    src: url(../font/GlowSansTC-Normal-Regular.otf);
+}
+@font-face {
+    font-family: 'Glow Sans TC Compressed Book';
+    src: url(../font/GlowSansTC-Compressed-Book.otf);
+}
+
+:root{
+    --bg: #FFF9EE;
+    --main: #392C29;
+}
+*{
+    color: var(--main);
+}
+html{
+    background-color: var(--bg);
+}
+h1{
+    font-family: 'Glow Sans TC Wide Heavy';
+    font-size: 40px;
+    letter-spacing: 0.06em;
+}
+h2{
+   font-family: 'Glow Sans TC Wide ExtraBold'; 
+   font-size: 36px;
+   letter-spacing: 0.05em;
+}
+h3{
+    font-family: 'Glow Sans TC Normal Bold';
+    font-size: 32px;
+    letter-spacing: 0.05em;
+}
+h4{
+    font-family: 'Glow Sans TC Normal Bold';
+    font-size: 24px;
+    letter-spacing: 0.05em;
+}
+p{
+    font-family: 'Glow Sans TC Normal Regular';
+    font-size: 21px;
+    letter-spacing: 0.05em;
+    line-height: 36px;
+    text-align: justify;
+}
+.tag{
+    font-family: 'Glow Sans TC Wide Light';
+    font-family: 14px;
+    letter-spacing: 0.05em;
+}
+
+.loc{
+    font-family: 'Glow Sans TC Compressed Book';
+    font-family: 14px;
+    letter-spacing: 0.05em;
+}
+
+/*----------導覽列----------*/
+.topBar{
+    border-bottom: 2px solid var(--main);
+    padding: 16px 64px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--bg);
+}
+.logoHor{
+    width: 240px;
+}
+.logoHor img{
+    width: 100%;
+}
+.weather{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Glow Sans TC wide ExtraBold';
+    font-size: 24px;
+}
+.weather_icon{
+    font-size: 32px;
+}
+.menu{
+    padding-left: 48px;
+}
+#showMenu{
+    display: none;
+}
+#showMenu:hover .hiddenMenu{
+    display: block;
+    position: absolute;
+}
+.menu_button{
+    width: 30px;
+    border: none;
+    background-color: var(--bg);
+    font-size: 28px;
+    position: relative;
+}
+.menu:hover .hiddenMenu{
+    display: flex;
+    position: absolute;
+}
+
+/*----------隱藏菜單----------*/
+.hiddenMenu{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding-top: 144px;
+    padding-right: 96px;
+    padding-bottom: 160px;
+    padding-left: 144px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    height: 100vw;
+    background-color: var(--bg);
+    border-left: 2px solid var(--main);
+}
+.close{
+    position: absolute;
+    top: 32px;
+    right: 56px;
+    font-size: 30px;
+}
+.logoSqr{
+    width: 114px;
+    padding-bottom: 72px;
+}
+.logoSqr img{
+    width: 100%;
+}
+.hiddenMenu nav li{
+    font-family: 'Glow Sans TC Wide Bold';
+    font-size: 24px;
+    text-decoration: underline;
+    padding-bottom: 42px;
+}
+.SNS{
+    padding-top: 160px;
+    display: flex;
+    gap: 32px;
+}
+
+/*-----------前導----------*/
+.mainPic{
+    padding-top: 80px;
+}
+.intro{
+    padding-top: 64px;
+    text-align: center;
+    font-family: 'Glow Sans TC Normal Regular';
+    font-size: 21px;
+    letter-spacing: 1px;
+    line-height: 36px;
+    padding-bottom: 56px;
+}
+.downArrowWide{
+    padding-bottom: 96px;
+}
+
+/*----------頁尾----------*/
