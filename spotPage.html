@@ -4,9 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8eca0a48b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.css">
     <title>城市漫遊 City Rumbler｜探索點｜SIDOLI RADIO 小島裡</title>
 </head>
 <body>
-    
+    <!-- 導覽列 -->
+    <header class="topBar">
+        <div class="logoHor">
+            <a href="index.html">
+                <img src="img/logoHor.svg" alt="logo">
+            </a>
+        </div>
+        <div class="weather">
+            <div class="weather_icon"><i class="fa-solid fa-cloud"></i></div>
+            <div class="weather_degree">22°C</div>
+        </div>
+        <div class="menu">
+            <input type="checkbox" id="showMenu"></input>
+            <label for="showMenu" class="menu_button">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <div class="hiddenMenu">
+                <div class="close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <div class="logoSqr">
+                    <a href="index.html">
+                        <img src="img/logoSqr.png" alt="首頁">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="routes.html">路線</a>
+                        </li>
+                        <li>
+                            <a href="spots.html">探索點</a>
+                        </li>
+                        <li>
+                            <a href="activities.html">活動</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">聯絡我們</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="SNS">
+                    <div class="facebook">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                    <div class="instagram">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div class="twitter">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </header>
 </body>
 </html>

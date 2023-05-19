@@ -216,7 +216,6 @@
     align-items: flex-end;
 }
 .activities .content .activity .detail .loc{
-    /* display: inline-block; */
     padding: 8px 10px 8px 10px;
     text-align: right;
     color: var(--bg);
@@ -227,7 +226,6 @@
     border-top-right-radius: 5px;
 }
 .activities .content .activity .detail .tag{
-    /* display: inline-block; */
     padding: 8px 10px;
     text-align: right;
     color: var(--bg);
