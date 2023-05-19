@@ -188,3 +188,100 @@ p{
 }
 
 /*----------頁尾----------*/
+footer{
+    background-color: var(--main);
+    text-align: center;
+}
+.subscribe{
+    padding-top: 112px;
+    padding-bottom: 112px;
+    border-bottom: 1px solid var(--bg);
+    text-align: center;
+}
+.subscribe .logo{
+    margin: 0 auto;
+    width: 185px;
+}
+.subscribe .logo img{
+    width: 100%;
+}
+.subscribe h2{
+    color: var(--bg);
+    padding-top: 48px;
+}
+.subscribe p{
+    color: var(--bg);
+    text-align: center;
+    padding-top: 28px;
+    font-family: 'Glow Sans TC Wide Light';
+    font-size: 18px;
+    letter-spacing: 0.05em;
+}
+.subscribe .emailInput{
+    position: relative;
+    padding-top: 56px;
+}
+.subscribe .emailInput input{
+    width: 600px;
+    height: 48px;
+    border: none;
+    border-bottom: 1px solid var(--bg);
+    background-color: var(--main);
+    color: var(--bg);
+    font-size: 28px;
+}
+.subscribe .emailInput input:focus{
+    border: none;
+    border-bottom: 1px solid var(--bg);
+}
+.subscribe .emailInput input::placeholder{
+    font-family: 'Glow Sans TC Normal Regular';
+    font-size: 24px;
+}
+.subscribe .emailInput a{
+    position: absolute;
+    margin-left: 16px;
+    background-color: var(--main);
+}
+footer .nav{
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    justify-content: space-between;
+}
+footer .nav .menu ul{
+    display: flex;
+    gap: 20px;
+}
+footer .nav .menu li{
+    width: 184px;
+    border-bottom: 1px solid var(--bg);
+    text-align: left;
+    padding-bottom: 12px;
+}
+footer .nav .menu li a{
+    color: var(--bg);
+    font-family: 'Glow Sans TC Wide Bold';
+    font-size: 24px;
+    text-decoration: none;
+}
+footer .nav .SNS{
+    padding-top: 0;
+}
+footer .nav .SNS i{
+    color: var(--bg);
+}
+footer .copyright{
+    border-top: 1px solid var(--bg);
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+footer .copyright p{
+    font-family: 'Glow Sans TC Wide Light';
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: var(--bg);
+    text-align: center;
+}
