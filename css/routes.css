@@ -1,0 +1,80 @@
+/* ----------地點選單列---------- */
+.locBar{
+    width: 100vw;
+}
+
+/* ----------城市選單---------- */
+.locBar .cityBar{
+    position: sticky;
+    top: -30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    border-top: 2px solid var(--main);
+    border-bottom: 1px solid var(--main);
+}
+.locBar .cityBar .city{
+    padding-right: 96px;
+    padding-left: 96px;
+    color: #392C29;
+    text-align: center;
+    border-right: 1px solid var(--main);
+}
+.locBar .cityBar .city:nth-child(1){
+    border-left: 1px solid var(--main);
+}
+.locBar .cityBar .city .icon{
+    width: 160px;
+    font-size: 110px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.locBar .cityBar .city .name{
+    font-family: 'Glow Sans TC Wide Bold';
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 34px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.locBar .cityBar .selected .icon{
+    opacity: 1;
+}
+.locBar .cityBar .selected .name{
+    opacity: 1;
+    font-family: 'Glow Sans TC Wide ExtraBold';
+}
+
+/* ----------路線選單---------- */
+.locBar .routeBar{
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    border-bottom: 1px solid var(--main);
+}
+.locBar .routeBar .route{
+    padding: 16px 80px;
+    color: #392C29;
+    text-align: center;
+    border-right: 1px solid var(--main);
+}
+.locBar .routeBar .route:nth-child(1){
+    border-left: 1px solid var(--main);
+}
+.locBar .routeBar .route .name{
+    font-family: 'Glow Sans TC Wide Bold';
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 34px;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.locBar .routeBar .selected .name{
+    opacity: 1;
+    font-family: 'Glow Sans TC Wide ExtraBold';
+}
+
