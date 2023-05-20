@@ -141,7 +141,7 @@ p{
     top: 0;
     right: 0;
     z-index: 20;
-    height: 100vw;
+    height: 100vh;
     background-color: var(--bg);
     border-left: 2px solid var(--main);
 }
