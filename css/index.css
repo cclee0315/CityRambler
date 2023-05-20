@@ -18,18 +18,51 @@
 
 
 /*----------跑馬燈----------*/
+@keyframes scroll_1{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes scroll_2{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-200%);
+    }
+}
 .ticker{
+    border-top: 2px solid #000;
     padding-top: 32px;
     padding-bottom: 32px;
-    border-top: 2px solid #000;
     overflow: hidden;
+    display: flex;
+}
+.ticker .tagWrapper{
+    /* padding-right: 24px; */
+    /* position: absolute; */
+    /* display: inline-block; */
+
+    animation: scroll_1 60s linear infinite;
+    animation-delay: -60s;
+
+    &:nth-child(2){
+    animation: scroll_2 60s linear infinite;
+    animation-delay: -30s;
+    }
 }
 .ticker ul{
-    display: flex;
-    gap: 24px;
+    /* display: flex; */
+    /* gap: 24px; */
+    white-space: nowrap;
 }
 .ticker ul li{
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
+    display: inline-block;
+    padding-left: 24px;
 }
 .ticker ul li a{
     font-family: 'Glow Sans TC Wide Light';
