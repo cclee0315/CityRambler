@@ -22,6 +22,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
     border-top: 2px solid #000;
+    overflow: hidden;
 }
 .ticker ul{
     display: flex;
@@ -102,7 +103,7 @@
     max-width: 1200px;
     display: grid;
     /* grid-template: repeat(4,1fr) / repeat(6,1fr); */
-    grid-template: repeat(4,196.66px) / repeat(6,196.66px);
+    grid-template: repeat(4,183.33px) / repeat(6,183.33px);
     gap: 20px;
 }
 .spots .cardGrid .card{
