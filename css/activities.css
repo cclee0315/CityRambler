@@ -1,6 +1,6 @@
 .time{
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 .date{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
@@ -54,7 +54,7 @@
     padding-bottom: 40px;
 }
 .randomSpot .info .loc{
-    padding-bottom: 16px;
+    padding-bottom: 8px;
 }
 .randomSpot .btnGo{
     align-self: self-end;
@@ -86,6 +86,7 @@
     width: 230px;
     text-align: right;
     padding-right: 16px;
+    line-height: 1.5em;
 }
 .activities .activity .dot{
     width: 12px;
@@ -110,4 +111,7 @@
 .activities .activity .info h3{
     text-align: left;
     padding-bottom: 32px;
+}
+.activities .activity .info .loc{
+    padding-bottom: 8px;
 }
