@@ -1,0 +1,197 @@
+/* ----------隨機推薦---------- */
+.randomSpot{
+    border-top: 1px solid var(--main);
+}
+.randomSpot .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    display: flex;
+}
+.randomSpot .title{
+    padding-right: 48px;
+    /* transform: rotate(90degree); */
+    writing-mode: vertical-lr;
+    /* text-orientation: upright; */
+    text-orientation: sideways-right;
+    font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    color: var(--main);
+}
+.randomSpot .title img{
+    transform: rotate(90deg);
+}
+.randomSpot .pic{
+    max-height: 232px;
+    min-width: 504px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid var(--main);
+}
+.randomSpot .pic img{
+    width: 100%;
+}
+.randomSpot .info{
+    padding-left: 56px;
+    padding-right: 20px;
+    position: relative;
+}
+.randomSpot .info .loc{
+    padding-bottom: 16px;
+}
+.randomSpot .info h3{
+    padding-bottom: 40px;
+}
+.randomSpot .info .tag{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.randomSpot .btnGo{
+    align-self: self-end;
+}
+
+
+
+/* ----------地點選單列---------- */
+.locBar{
+    width: 100vw;
+    position: sticky;
+    top: -30px;
+    z-index: 9;
+}
+
+    /* ----------城市選單---------- */
+    .locBar .cityBar{
+        background-color: var(--bg);
+        padding-top: 16px;
+        padding-bottom: 16px;
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        border-top: 2px solid var(--main);
+        border-bottom: 1px solid var(--main);
+    }
+    .locBar .cityBar .city{
+        padding-right: 96px;
+        padding-left: 96px;
+        color: #392C29;
+        text-align: center;
+        border-right: 1px solid var(--main);
+    }
+    .locBar .cityBar .city:nth-child(1){
+        border-left: 1px solid var(--main);
+    }
+    .locBar .cityBar .city .icon{
+        width: 160px;
+        font-size: 110px;
+        cursor: pointer;
+        opacity: 0.3;
+    }
+    .locBar .cityBar .city .name{
+        font-family: 'Glow Sans TC Wide Bold';
+        font-size: 24px;
+        letter-spacing: 0.05em;
+        line-height: 34px;
+        cursor: pointer;
+        opacity: 0.3;
+    }
+    .locBar .cityBar .selected .icon{
+        opacity: 1;
+    }
+    .locBar .cityBar .selected .name{
+        opacity: 1;
+        font-family: 'Glow Sans TC Wide ExtraBold';
+    }
+
+/*----------探索點----------*/
+.spots .cardGrid{
+    margin: 0 auto;
+    padding-top: 112px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    display: grid;
+    /* grid-template: repeat(4,1fr) / repeat(6,1fr); */
+    grid-template: repeat(8,183.33px) / repeat(6,183.33px);
+    gap: 20px;
+}
+.spots .cardGrid .card{
+    position: relative;
+    border-radius: 24px;
+    border: 1px solid var(--main);
+    overflow: hidden;
+}
+.spots .cardGrid .card .caption{
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.spots .cardGrid .card .caption .tag{
+    padding: 6px 16px;
+    border: 1px solid var(--main);
+    border-bottom: none;
+    background-color: var(--bg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.spots .cardGrid .card .caption h3{
+    padding: 6px 16px;
+    border: 1px solid var(--main);
+    background-color: var(--bg);
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.spots .cardGrid .card .caption .loc{
+    padding: 6px 16px;
+    border: 1px solid var(--main);
+    border-top: none;
+    background-color: var(--bg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    align-self: flex-end;
+}
+.spots .cardGrid .card .pic img{
+    width: 100%;
+}
+.spots .cardGrid .c01{
+    grid-area: 1 / 1 / 5 / 5;
+}
+.spots .cardGrid .c02{
+    grid-area: 1 / 5 / 2 / 7;
+}
+.spots .cardGrid .c03{
+    grid-area: 2 / 5 / 4 / 7;
+}
+.spots .cardGrid .c04{
+    grid-area: 4 / 5 / 5 / 7;
+}
+.spots .cardGrid .c05{
+    grid-area: 5 / 1 / 7 / 3;
+}
+.spots .cardGrid .c06{
+    grid-area: 5 / 3 / 7 / 7;
+}
+.spots .cardGrid .c07{
+    grid-area: 7 / 1 / 9 / 5;
+}
+.spots .cardGrid .c08{
+    grid-area: 7 / 5 / 9 / 7;
+}
+.spots .lookMore{
+    text-align: center;
+    padding-bottom: 128px;
+}
+.spots .lookMore .text{
+    display: block;
+    font-family: 'Glow Sans TC Wide Light', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    padding-bottom: 24px;
+}
+.spots .lookMore img{
+    cursor: pointer;
+}

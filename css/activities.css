@@ -1,0 +1,57 @@
+/* ----------隨機推薦---------- */
+.randomSpot{
+    border-top: 1px solid var(--main);
+}
+.randomSpot .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    display: flex;
+}
+.randomSpot .title{
+    padding-right: 48px;
+    /* transform: rotate(90degree); */
+    writing-mode: vertical-lr;
+    /* text-orientation: upright; */
+    text-orientation: sideways-right;
+    font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    color: var(--main);
+}
+.randomSpot .title img{
+    transform: rotate(90deg);
+}
+.randomSpot .pic{
+    max-height: 232px;
+    min-width: 504px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid var(--main);
+}
+.randomSpot .pic img{
+    width: 100%;
+}
+.randomSpot .info{
+    padding-left: 56px;
+    padding-right: 20px;
+    position: relative;
+}
+.randomSpot .info .date{
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
+    font-size: 20px;
+}
+.randomSpot .info .time{
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
+    font-size: 20px;
+    padding-bottom: 32px;
+}
+.randomSpot .info h3{
+    padding-bottom: 40px;
+}
+.randomSpot .info .loc{
+    padding-bottom: 16px;
+}
+.randomSpot .btnGo{
+    align-self: self-end;
+}

@@ -245,10 +245,9 @@ footer{
 }
 footer .nav{
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1280px;
     display: flex;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 80px 40px;
     justify-content: space-between;
 }
 footer .nav .menu ul{
