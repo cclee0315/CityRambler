@@ -1,6 +1,7 @@
 /* ----------隨機推薦---------- */
 .randomSpot{
-    border-top: 1px solid var(--main);
+    border-top: 2px solid var(--main);
+    border-bottom: 2px solid var(--main);
 }
 .randomSpot .container{
     max-width: 1200px;
@@ -54,4 +55,10 @@
 }
 .randomSpot .btnGo{
     align-self: self-end;
+}
+
+/* ----------活動---------- */
+.activities{
+    margin: 0 auto;
+    padding: 160px 40px;
 }
