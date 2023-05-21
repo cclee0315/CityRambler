@@ -7,6 +7,7 @@
     <script src="https://kit.fontawesome.com/8eca0a48b9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/contact.css">
     <title>城市漫遊 City Rumbler｜聯絡我們</title>
 </head>
 <body>
@@ -69,17 +70,45 @@
     <main>
         <!-- 引言 -->
         <section class="intro">
-           <h1>聯絡我們</h1>
-           <div class="mainPic"><img src="img/mainPic_contact.png" alt="messy man"></div>
-           <p class="intro">
+            <h1>聯絡我們</h1>
+            <div class="mainPic"><img src="img/mainPic_contact.png" alt="messy man"></div>
+            <p class="intro">
                -<br>
                有任何問題與意見<br>
                歡迎於底下與我們聯繫
-           </p>
-           <!-- <div class="downArrowWide">
+            </p>
+            <!-- <div class="downArrowWide">
                <img src="img/downArrowWide.svg" alt="go down">
-           </div> -->
-       </section>
+            </div> -->
+        </section>
+
+        <!-- 表單 -->
+        <form action="">
+            <div class="nameWrap">
+                <div class="lastNameWrap">
+                    <label for="lastName">姓氏</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="請輸入您的姓氏">
+                </div>
+                <div class="firstNameWrap">
+                    <label for="firstName">名字*</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="請輸入您的名字" required>
+                </div>
+            </div>
+            <div class="emailWrap">
+                <label for="email">Email*</label>
+                <input type="email" name="email" id="email" placeholder="請輸入您的 Email" required>
+            </div>
+            <div class="subjectWrap">
+                <label for="subject">主旨*</label>
+                <input type="text" name="subject" id="subject" placeholder="請輸入您的內容主旨" required>
+            </div>
+            <div class="feedbackWrap">
+                <label for="feedback">聯繫內容*</label>
+                <textarea name="feedback" id="feedback" rows="4" placeholder="請輸入您想和我們聯繫的內容" required></textarea>
+            </div>
+            <button type="submit"><img src="img/btnGo.svg" alt=""></button>
+        </form>
+
    </main>
 
     <!-- 頁尾 -->
