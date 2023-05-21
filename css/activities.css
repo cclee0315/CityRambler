@@ -1,3 +1,12 @@
+.time{
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
+    font-size: 20px;
+}
+.date{
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
+    font-size: 20px;
+}
+
 /* ----------隨機推薦---------- */
 .randomSpot{
     border-top: 2px solid var(--main);
@@ -38,13 +47,7 @@
     padding-right: 20px;
     position: relative;
 }
-.randomSpot .info .date{
-    font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 20px;
-}
 .randomSpot .info .time{
-    font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 20px;
     padding-bottom: 32px;
 }
 .randomSpot .info h3{
@@ -59,6 +62,52 @@
 
 /* ----------活動---------- */
 .activities{
+    position: relative;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 160px 40px;
+    text-align: center;
+}
+.activities .wrap{
+    overflow: scroll;
+    max-height: 780px;
+}
+.activities .timeline{
+    position: absolute;
+    left: 284px;
+    top: 112px;
+}
+.activities .activity{
+    display: flex;
+    align-items: center;
+    padding-bottom: 64px;
+}
+.activities .activity .time{
+    width: 230px;
+    text-align: right;
+    padding-right: 16px;
+}
+.activities .activity .dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main);
+}
+.activities .activity .pic{
+    overflow: hidden;
+    max-width: 387px;
+    max-height: 217px;
+    border-radius: 50%;
+    border: 1px solid var(--main);
+    margin: 0 32px;
+}
+.activities .activity .info{
+    display: flex;
+    flex-direction: column;
+    max-width: 388px;
+    align-items: start;
+}
+.activities .activity .info h3{
+    text-align: left;
+    padding-bottom: 32px;
 }
