@@ -204,11 +204,16 @@
 /*----------活動----------*/
 
 .activities .content{
-    margin: 0 auto;
-    padding: 144px 40px;
+    margin: 144px auto;
+    padding: 0 40px;
     max-width: 1200px;
     display: flex;
     gap: 20px;
+    position: relative;
+}
+.activities .content .timeline{
+    position: absolute;
+    bottom: 90px;
 }
 .activities .content .activity{
     text-align: center;
@@ -270,10 +275,12 @@
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-.activities .content .activity .line{
-    margin-top: 64px;
-    margin-bottom: 24px;
-    border: 1px solid var(--main);
+.activities .content .activity .dot{
+    margin: 48px auto 24px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--main);
 }
 .activities .content .activity .date{
     font-family: 'Glow Sans TC Normal Bold';

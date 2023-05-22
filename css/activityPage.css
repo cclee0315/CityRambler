@@ -1,0 +1,113 @@
+/*----------活動文章----------*/
+.activity{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    position: relative;
+    text-align: right;
+}
+.activity header{
+    width: 100%;
+    text-align: left;
+    position: absolute;
+    left: 42px;
+    top: 104px;
+}
+.activity header .time{
+    padding: 6px 18px;
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
+    font-size: 18px;
+    color: var(--main);
+    border: 1px solid var(--main);
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.activity header .date{
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
+    font-size: 20px;
+}
+.activity header h1{
+    /* width: 40%; */
+    padding: 6px 18px;
+    text-align: left;
+    color: var(--main);
+    border: 1px solid var(--main);
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    margin-bottom: 22px;
+    line-height: 1.6em;
+}
+.activity header .loc{
+    padding: 6px 18px;
+    color: var(--main);
+    border: 1px solid var(--main);
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    margin-bottom: 70px;
+}
+.activity header .tag{
+    text-align: left;
+    padding: 6px 18px;
+    color: var(--main);
+    border: 1px solid var(--main);
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.activity .coverPic{
+    z-index: -1;
+    top: 26px;
+    right: 0;
+    max-height: 520px;
+    border: 1px solid var(--main);
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 203px;
+    /* text-align: center; */
+}
+.activity .coverPic img{
+    width: 100%;
+}
+.activity .article{
+     padding: 88px 0 104px; 
+     columns: 3;
+     column-gap: 56px;
+}
+.activity .article p{
+    margin-bottom: 16px;
+}
+.activity .info{
+    width: 100%;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
+    column-gap: 56px;
+}
+.activity .info .title{
+    font-family: 'Glow Sans TC Wide Bold', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.01em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--main);
+    text-align: left;
+}
+.activity .locName{
+    text-align: left;
+    border: 1px solid var(--main);
+    vertical-align: middle;
+    margin-bottom: 32px;
+    padding: 16px;
+}
+.activity .info .add{
+    grid-area: 1 / 1 / 4 / 2;
+}
+.activity .info .tel{
+    grid-area: 4 / 1 / 6 / 2;
+}
+.activity .info .openTime {
+    grid-area: 1 / 2 / 6 / 4;
+    width: 100%;
+}
+.activity .info .openTime .content{
+    columns: 2;
+}
