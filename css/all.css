@@ -107,68 +107,64 @@ p{
 .menu{
     padding-left: 48px;
 }
+    /*----------隱藏菜單----------*/
+    .hiddenMenu{
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        padding-top: 144px;
+        padding-right: 96px;
+        padding-bottom: 160px;
+        padding-left: 144px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 20;
+        height: 100vh;
+        background-color: var(--bg);
+        border-left: 2px solid var(--main);
+    }
+    .close{
+        position: absolute;
+        top: 32px;
+        right: 56px;
+        font-size: 30px;
+    }
+    .logoSqr{
+        width: 114px;
+        padding-bottom: 72px;
+    }
+    .logoSqr img{
+        width: 100%;
+    }
+    .hiddenMenu nav li{
+        font-family: 'Glow Sans TC Wide Bold';
+        font-size: 24px;
+        text-decoration: underline;
+        padding-bottom: 42px;
+    }
+    .SNS{
+        padding-top: 160px;
+        display: flex;
+        gap: 32px;
+    }
 #showMenu{
     display: none;
 }
-#showMenu:hover .hiddenMenu{
-    display: block;
+#showMenu:checked + .menu .hiddenMenu{
+    display: flex;
     position: absolute;
 }
 .menu_button{
     width: 30px;
+    height: 30px;
     border: none;
     background-color: var(--bg);
     font-size: 28px;
     position: relative;
 }
-.menu:hover .hiddenMenu{
-    display: flex;
-    position: absolute;
-}
 
-/*----------隱藏菜單----------*/
-.hiddenMenu{
-    display: none;
-    /* display: flex; */
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    padding-top: 144px;
-    padding-right: 96px;
-    padding-bottom: 160px;
-    padding-left: 144px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 20;
-    height: 100vh;
-    background-color: var(--bg);
-    border-left: 2px solid var(--main);
-}
-.close{
-    position: absolute;
-    top: 32px;
-    right: 56px;
-    font-size: 30px;
-}
-.logoSqr{
-    width: 114px;
-    padding-bottom: 72px;
-}
-.logoSqr img{
-    width: 100%;
-}
-.hiddenMenu nav li{
-    font-family: 'Glow Sans TC Wide Bold';
-    font-size: 24px;
-    text-decoration: underline;
-    padding-bottom: 42px;
-}
-.SNS{
-    padding-top: 160px;
-    display: flex;
-    gap: 32px;
-}
 
 /*-----------前導----------*/
 .mainPic{
@@ -186,6 +182,11 @@ p{
 .downArrowWide{
     padding-bottom: 96px;
 }
+/* .menu:hover .hiddenMenu{
+    display: flex;
+    position: absolute;
+} */
+
 
 /*----------頁尾----------*/
 footer{
