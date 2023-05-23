@@ -86,7 +86,7 @@
 .routeContent{
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: 120px 40px 200px;
 }
     
     /* ----------封面圖片---------- */
@@ -124,3 +124,65 @@
         margin-bottom: 16px;
     }
     
+    /*----------路線圖----------*/
+    .routeMap{
+        position: relative;
+        text-align: center;
+    }
+    .routeMap .spot .pic{
+        width: 426px;
+        height: 285px;
+        border-radius: 250px;
+        border: 1px solid var(--main);
+        overflow: hidden;
+    }
+    .routeMap .spot .pic img{
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+    }
+    /* .routeMap .start{
+        text-align: left;
+        display: flex;
+    }
+    .routeMap .start .name{
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 5px;
+        background-color: var(--main);
+        color: var(--bg);
+    }
+    .routeMap .start .pic{
+        position: absolute;
+        left: calc((100%-220px)/12);
+        top: -16px;
+        z-index: -1;
+    }
+    .routeMap .start .txt{
+        position: absolute;
+        top: 120px;
+        left: 50%;
+    } */
+    .routeMap .start{
+        text-align: left;
+        position: relative;
+    }
+    .routeMap .start .name{
+        top: -16px;
+        position: absolute;
+        display: inline-block;
+        padding: 12px 16px;
+        border-radius: 5px;
+        background-color: var(--main);
+        color: var(--bg);
+    }
+    .routeMap .start .pic{
+        position: relative;
+        left: calc((100%-220px)/12);
+        z-index: -1;
+    }
+    .routeMap .start .txt{
+        position: absolute;
+        top: 120px;
+        left: calc(50% + 10px);
+    }
