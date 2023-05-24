@@ -61,7 +61,7 @@ p{
     font-family: 'Glow Sans TC Normal Regular';
     font-size: 21px;
     letter-spacing: 0.03em;
-    line-height: 36px;
+    line-height: 42px;
     text-align: justify;
 }
 .tag{
@@ -107,6 +107,16 @@ p{
 .menu{
     padding-left: 48px;
 }
+.menu_button{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: var(--bg);
+    font-size: 28px;
+    position: relative;
+}
+
     /*----------隱藏菜單----------*/
     .hiddenMenu{
         display: none;
@@ -130,6 +140,7 @@ p{
         top: 32px;
         right: 56px;
         font-size: 30px;
+        cursor: pointer;
     }
     .logoSqr{
         width: 114px;
@@ -156,17 +167,9 @@ p{
     display: flex;
     position: absolute;
 }
-.menu_button{
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: var(--bg);
-    font-size: 28px;
-    position: relative;
-}
 
 
-/*-----------前導----------*/
+/*-----------引言---------*/
 .mainPic{
     padding-top: 80px;
 }
@@ -176,11 +179,10 @@ p{
     font-family: 'Glow Sans TC Normal Regular';
     font-size: 21px;
     letter-spacing: 1px;
-    line-height: 36px;
     padding-bottom: 56px;
 }
 .downArrowWide{
-    padding-bottom: 96px;
+    padding-bottom: 80px;
 }
 /* .menu:hover .hiddenMenu{
     display: flex;
@@ -232,7 +234,7 @@ footer{
     font-size: 28px;
 }
 .subscribe .emailInput input:focus{
-    border: none;
+    outline: none;
     border-bottom: 1px solid var(--bg);
 }
 .subscribe .emailInput input::placeholder{
