@@ -277,6 +277,11 @@
     left: 1px;
     clip-path: ellipse(50% 50% at 50% 50%);
     overflow: hidden;
+    transition: 0.5s linear;
+}
+.activities .content .activity .pic:hover img{
+    scale: 1.1;
+    transition: 0.5s linear;
 }
 .activities .content .activity .detail{
     position: absolute;
