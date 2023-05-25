@@ -99,26 +99,32 @@
 .routes .content .picCards .pic:nth-child(1){
     right: 0;
     z-index: 3;
+    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(1):hover{
-    z-index: 5;
+    z-index: 4;
     scale: 1.05;
+    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(2){
     left: 30%;
     z-index: 2;
+    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(2):hover{
-    z-index: 5;
+    z-index: 4;
     scale: 1.05;
+    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(3){
     left: 0;
     z-index: 1;
+    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(3):hover{
-    z-index: 5;
+    z-index: 4;
     scale: 1.05;
+    transition: 0.3s linear;
 }
 .routes .content .text{
     width: 30%;
@@ -200,6 +206,11 @@
 }
 .spots .cardGrid .card .pic img{
     width: 100%;
+    transition: 0.5s linear;
+}
+.spots .cardGrid .card:hover img{
+    scale: 1.1;
+    transition: 0.5s linear;
 }
 .spots .cardGrid .c01{
     grid-area: 1 / 1 / 3 / 3;
