@@ -102,9 +102,7 @@
 }
 .routes .content .picCards .pic:nth-child(1):hover{
     z-index: 5;
-}
-.routes .content .picCards .pic:nth-child(1):hover {
-    z-index: 5;
+    scale: 1.05;
 }
 .routes .content .picCards .pic:nth-child(2){
     left: 30%;
@@ -112,6 +110,7 @@
 }
 .routes .content .picCards .pic:nth-child(2):hover{
     z-index: 5;
+    scale: 1.05;
 }
 .routes .content .picCards .pic:nth-child(3){
     left: 0;
@@ -119,6 +118,7 @@
 }
 .routes .content .picCards .pic:nth-child(3):hover{
     z-index: 5;
+    scale: 1.05;
 }
 .routes .content .text{
     width: 30%;
