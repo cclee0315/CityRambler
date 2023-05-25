@@ -17,6 +17,14 @@
     display: inline-block;
 }
 
+@keyframes mainPicAni{
+    0%{rotate: 0deg;}
+    100%{rotate: 5deg;}
+}
+.intro .mainPic{
+    animation: mainPicAni 0.8s linear 0s infinite alternate-reverse;
+}
+
 
 /*----------跑馬燈----------*/
 @keyframes scroll_1{
@@ -92,13 +100,25 @@
     right: 0;
     z-index: 3;
 }
+.routes .content .picCards .pic:nth-child(1):hover{
+    z-index: 5;
+}
+.routes .content .picCards .pic:nth-child(1):hover {
+    z-index: 5;
+}
 .routes .content .picCards .pic:nth-child(2){
     left: 30%;
     z-index: 2;
 }
+.routes .content .picCards .pic:nth-child(2):hover{
+    z-index: 5;
+}
 .routes .content .picCards .pic:nth-child(3){
     left: 0;
     z-index: 1;
+}
+.routes .content .picCards .pic:nth-child(3):hover{
+    z-index: 5;
 }
 .routes .content .text{
     width: 30%;
