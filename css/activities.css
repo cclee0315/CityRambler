@@ -38,6 +38,7 @@
     overflow: hidden;
     border-radius: 50%;
     border: 1px solid var(--main);
+    vertical-align: middle;
 }
 .randomSpot .pic img{
     width: 100%;
