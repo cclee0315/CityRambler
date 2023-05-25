@@ -90,7 +90,7 @@
         opacity: 0.3;
     }
     .locBar .cityBar .city .name{
-        font-family: 'Glow Sans TC Wide Bold';
+        font-family: 'Glow Sans TC Wide Bold', sans-serif;
         font-size: 24px;
         letter-spacing: 0.05em;
         line-height: 34px;
@@ -102,7 +102,7 @@
     }
     .locBar .cityBar .selected .name{
         opacity: 1;
-        font-family: 'Glow Sans TC Wide ExtraBold';
+        font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
     }
 
 /*----------探索點----------*/

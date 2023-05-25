@@ -38,41 +38,41 @@ html{
     background-color: var(--bg);
 }
 h1{
-    font-family: 'Glow Sans TC Wide Heavy';
+    font-family: 'Glow Sans TC Wide Heavy', sans-serif;
     font-size: 40px;
     letter-spacing: 0.06em;
 }
 h2{
-   font-family: 'Glow Sans TC Wide ExtraBold'; 
+   font-family: 'Glow Sans TC Wide ExtraBold', sans-serif; 
    font-size: 36px;
    letter-spacing: 0.05em;
 }
 h3{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 32px;
     letter-spacing: 0.05em;
 }
 h4{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 24px;
     letter-spacing: 0.05em;
 }
 p{
-    font-family: 'Glow Sans TC Normal Regular';
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
     font-size: 21px;
     letter-spacing: 0.03em;
     line-height: 42px;
     text-align: justify;
 }
 .tag{
-    font-family: 'Glow Sans TC Wide Light';
-    font-family: 14px;
+    font-family: 'Glow Sans TC Wide Light', sans-serif;
+    font-size: 14px;
     letter-spacing: 0.05em;
 }
 
 .loc{
-    font-family: 'Glow Sans TC Compressed Book';
-    font-family: 14px;
+    font-family: 'Glow Sans TC Compressed Book', sans-serif;
+    font-size: 14px;
     letter-spacing: 0.05em;
 }
 
@@ -98,7 +98,7 @@ p{
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Glow Sans TC wide ExtraBold';
+    font-family: 'Glow Sans TC wide ExtraBold', sans-serif;
     font-size: 24px;
 }
 .weather_icon{
@@ -150,7 +150,7 @@ p{
         width: 100%;
     }
     .hiddenMenu nav li{
-        font-family: 'Glow Sans TC Wide Bold';
+        font-family: 'Glow Sans TC Wide Bold', sans-serif;
         font-size: 24px;
         text-decoration: underline;
         padding-bottom: 42px;
@@ -176,7 +176,7 @@ p{
 .intro{
     padding-top: 64px;
     text-align: center;
-    font-family: 'Glow Sans TC Normal Regular';
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
     font-size: 21px;
     letter-spacing: 1px;
     padding-bottom: 56px;
@@ -216,7 +216,7 @@ footer{
     color: var(--bg);
     text-align: center;
     padding-top: 28px;
-    font-family: 'Glow Sans TC Wide Light';
+    font-family: 'Glow Sans TC Wide Light', sans-serif;
     font-size: 18px;
     letter-spacing: 0.05em;
 }
@@ -238,7 +238,7 @@ footer{
     border-bottom: 1px solid var(--bg);
 }
 .subscribe .emailInput input::placeholder{
-    font-family: 'Glow Sans TC Normal Regular';
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
     font-size: 24px;
 }
 .subscribe .emailInput a{
@@ -265,7 +265,7 @@ footer .nav .menu li{
 }
 footer .nav .menu li a{
     color: var(--bg);
-    font-family: 'Glow Sans TC Wide Bold';
+    font-family: 'Glow Sans TC Wide Bold', sans-serif;
     font-size: 24px;
     text-decoration: none;
 }
@@ -281,7 +281,7 @@ footer .copyright{
     padding-bottom: 40px;
 }
 footer .copyright p{
-    font-family: 'Glow Sans TC Wide Light';
+    font-family: 'Glow Sans TC Wide Light', sans-serif;
     font-size: 14px;
     letter-spacing: 0.05em;
     color: var(--bg);

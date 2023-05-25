@@ -177,7 +177,7 @@
     padding-bottom: 48px;
 }
 .related .relRoute .content .text .distance{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 16px;
     letter-spacing: 0.03em;
 }
@@ -337,12 +337,12 @@
     background-color: var(--main);
 }
 .related .relAct .content .act .date{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 20px;
     line-height: 32px;
 }
 .related .relAct .content .act .time{
-    font-family: 'Glow Sans TC Normal Regular';
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
     font-size: 20px;
     line-height: 32px;
 }

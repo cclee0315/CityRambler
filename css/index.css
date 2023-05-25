@@ -66,7 +66,7 @@
     padding-left: 24px;
 }
 .ticker ul li a{
-    font-family: 'Glow Sans TC Wide Light';
+    font-family: 'Glow Sans TC Wide Light', sans-serif;
     font-size: 24px;
     text-decoration: none;
 }
@@ -115,7 +115,7 @@
     padding-bottom: 48px;
 }
 .routes .content .text .distance{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 16px;
     letter-spacing: 0.03em;
 }
@@ -283,12 +283,12 @@
     background-color: var(--main);
 }
 .activities .content .activity .date{
-    font-family: 'Glow Sans TC Normal Bold';
+    font-family: 'Glow Sans TC Normal Bold', sans-serif;
     font-size: 20px;
     line-height: 32px;
 }
 .activities .content .activity .time{
-    font-family: 'Glow Sans TC Normal Regular';
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
     font-size: 20px;
     line-height: 32px;
 }
