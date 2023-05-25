@@ -69,7 +69,8 @@
     text-align: center;
 }
 .activities .wrap{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     max-height: 780px;
 }
 .activities .timeline{
