@@ -127,6 +127,9 @@
         position: relative;
         text-align: center;
     }
+    .routeMap .spot{
+        position: relative;
+    }
     .routeMap .spot .pic{
         width: 426px;
         height: 285px;
@@ -341,4 +344,48 @@
             position: absolute;
             top: 120px;
             left: calc(50% + 10px);
+        }
+
+        /* 單獨小圖定位 */
+        .routeMap .spot .sidoli_item01{
+            z-index: 5;
+            position: absolute;
+            top: -30px;
+            right: 40px;
+        }
+        .routeMap .spot .sidoli_item02{
+            z-index: 5;
+            position: absolute;
+            bottom: -30px;
+            right: calc((100%-220px)/12 + 320px);
+        }
+        .routeMap .spot .ADLP_item01{
+            z-index: 5;
+            position: absolute;
+            bottom: -30px;
+            left: calc((100%-220px)/12 + 260px);
+        }
+        .routeMap .spot .XH_item01{
+            z-index: 5;
+            position: absolute;
+            bottom: -60px;
+            right: calc((100%-220px)/12 + 260px);
+        }
+        .routeMap .spot .WHH_item01{
+            z-index: 5;
+            position: absolute;
+            bottom: -10px;
+            left: calc((100%-220px)/12 + 330px);
+        }
+        .routeMap .spot .CST_item01{
+            z-index: 5;
+            position: absolute;
+            top: 20px;
+            right: 70px;
+        }
+        .routeMap .spot .CST_item02{
+            z-index: 5;
+            position: absolute;
+            top: -30px;
+            right: 190px;
         }
