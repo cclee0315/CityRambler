@@ -115,32 +115,14 @@
 .related .relRoute .content .picCards .pic:nth-child(1){
     right: 0;
     z-index: 3;
-    transition: 0.3s linear;
-}
-.related .relRoute .content .picCards .pic:nth-child(1):hover{
-    z-index: 5;
-    scale: 1.05;
-    transition: 0.3s linear;
 }
 .related .relRoute .content .picCards .pic:nth-child(2){
     left: 30%;
     z-index: 2;
-    transition: 0.3s linear;
-}
-.related .relRoute .content .picCards .pic:nth-child(2):hover{
-    z-index: 5;
-    scale: 1.05;
-    transition: 0.3s linear;
 }
 .related .relRoute .content .picCards .pic:nth-child(3){
     left: 0;
     z-index: 1;
-    transition: 0.3s linear;
-}
-.related .relRoute .content .picCards .pic:nth-child(3):hover{
-    z-index: 5;
-    scale: 1.05;
-    transition: 0.3s linear;
 }
 .related .relRoute .content .text{
     width: 30%;
