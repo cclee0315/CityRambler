@@ -156,6 +156,11 @@
 }
 .spots .cardGrid .card .pic img{
     width: 100%;
+    transition: 0.5s linear;
+}
+.spots .cardGrid .card .pic:hover img{
+    scale: 1.1;
+    transition: 0.5s linear;
 }
 .spots .cardGrid .c01{
     grid-area: 1 / 1 / 5 / 5;
