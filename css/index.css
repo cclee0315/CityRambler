@@ -3,12 +3,10 @@
 .titleBar{
     border-top: 2px solid #000;
     border-bottom: 1px solid #000;
-    padding: 24px 0;
+    padding: 16px 0;
 }
 .titleBar .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,6 +14,17 @@
 .titleBar h2{
     display: inline-block;
 }
+
+@media screen and (min-width: 1024px) {
+    .titleBar{
+        padding: 24px 0;
+    }
+    .titleBar .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 
 @keyframes mainPicAni{
     0%{rotate: 0deg;}
@@ -45,16 +54,12 @@
 }
 .ticker{
     border-top: 2px solid #000;
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
     overflow: hidden;
     display: flex;
 }
 .ticker .tagWrapper{
-    /* padding-right: 24px; */
-    /* position: absolute; */
-    /* display: inline-block; */
-
     animation: scroll_1 60s linear infinite;
     animation-delay: -60s;
 
@@ -64,42 +69,55 @@
     }
 }
 .ticker ul{
-    /* display: flex; */
-    /* gap: 24px; */
     white-space: nowrap;
 }
 .ticker ul li{
-    /* flex-shrink: 0; */
     display: inline-block;
-    padding-left: 24px;
+    padding-left: 12px;
 }
 .ticker ul li a{
     font-family: 'Glow Sans TC Wide Light', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .ticker{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    .ticker ul li{
+        padding-left: 24px;
+    }
+    .ticker ul li a{
+        font-size: 24px;
+        text-decoration: none;
+    }
 }
 
 /*----------路線----------*/
 .routes .content{
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 112px 40px;
+    padding: 32px;
     display: flex;
+    flex-direction: column;
     position: relative;
-    justify-content: space-between;
 }
 .routes .content .picCards{
-    width: 60%;
     display: flex;
     position: relative;
 }
 .routes .content .picCards .pic{
-    position: absolute;
+    width: 50%;
+    transition: 0.3s linear;
+}
+.routes .content .picCards .pic img{
+    width: 100%;
 }
 .routes .content .picCards .pic:nth-child(1){
+    position: absolute;
     right: 0;
     z-index: 3;
-    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(1):hover{
     z-index: 4;
@@ -107,9 +125,9 @@
     transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(2){
-    left: 30%;
+    position: absolute;
+    left: 25%;
     z-index: 2;
-    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(2):hover{
     z-index: 4;
@@ -119,7 +137,6 @@
 .routes .content .picCards .pic:nth-child(3){
     left: 0;
     z-index: 1;
-    transition: 0.3s linear;
 }
 .routes .content .picCards .pic:nth-child(3):hover{
     z-index: 4;
@@ -127,8 +144,7 @@
     transition: 0.3s linear;
 }
 .routes .content .text{
-    width: 30%;
-    min-height: 280px;
+    margin-top: 24px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -138,15 +154,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 48px;
+    padding-bottom: 16px;
 }
 .routes .content .text .distance{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     letter-spacing: 0.03em;
 }
 .routes .content .text .tags{
-    margin-top: 112px;
+    margin-top: 64px;
 }
 .routes .content .btnGo {
     position: absolute;
@@ -154,34 +170,70 @@
     bottom: 0;
 }
 
+@media screen and (min-width: 1024px) {
+    .routes .content{
+        max-width: 1200px;
+        padding: 112px 40px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .routes .content .picCards{
+        width: 60%;
+    }
+    .routes .content .picCards .pic{
+        width: auto;
+    }
+    .routes .content .picCards .pic:nth-child(1){
+        position: absolute;
+    }
+    .routes .content .picCards .pic:nth-child(2){
+        left: 30%; 
+        z-index: 2;
+    }
+    .routes .content .picCards .pic:nth-child(3){
+        left: 0;
+        z-index: 1;
+    }
+    .routes .content .text{
+        width: 30%;
+        margin-top: 0;
+        display: flex;
+    }
+    .routes .content .text header{
+        padding-bottom: 48px;
+    }
+    .routes .content .text .distance{
+        font-size: 16px;
+    }
+    .routes .content .text .tags{
+        margin-top: 112px;
+    }
+}
+
 
 
 /*----------探索點----------*/
 .spots .cardGrid{
     margin: 0 auto;
-    padding: 112px 40px;
-    max-width: 1200px;
-    display: grid;
-    /* grid-template: repeat(4,1fr) / repeat(6,1fr); */
-    grid-template: repeat(4,183.33px) / repeat(6,183.33px);
-    gap: 20px;
+    padding: 32px;
 }
 .spots .cardGrid .card{
     position: relative;
     border-radius: 24px;
     border: 1px solid var(--main);
     overflow: hidden;
+    margin-bottom: 14px;
 }
 .spots .cardGrid .card .caption{
     position: absolute;
-    left: 30px;
-    bottom: 25px;
+    left: 20px;
+    bottom: 14px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .spots .cardGrid .card .caption .tag{
-    padding: 6px 16px;
+    padding: 6px 10px;
     border: 1px solid var(--main);
     border-bottom: none;
     background-color: var(--bg);
@@ -189,14 +241,14 @@
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption h3{
-    padding: 6px 16px;
+    padding: 6px 10px;
     border: 1px solid var(--main);
     background-color: var(--bg);
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption .loc{
-    padding: 6px 16px;
+    padding: 6px 10px;
     border: 1px solid var(--main);
     border-top: none;
     background-color: var(--bg);
@@ -212,41 +264,75 @@
     scale: 1.1;
     transition: 0.5s linear;
 }
-.spots .cardGrid .c01{
-    grid-area: 1 / 1 / 3 / 3;
-}
-.spots .cardGrid .c02{
-    grid-area: 1 / 3 / 3 / 5;
-}
-.spots .cardGrid .c03{
-    grid-area: 1 / 5 / 2 / 7;
-}
-.spots .cardGrid .c04{
-    grid-area: 2 / 5 / 3 / 7;
-}
-.spots .cardGrid .c05{
-    grid-area: 3 / 1 / 5 / 5;
-}
-.spots .cardGrid .c06{
-    grid-area: 3 / 5 / 5 / 7;
+
+
+@media screen and (min-width: 1024px) {
+    .spots .cardGrid{
+        margin: 0 auto;
+        padding: 112px 40px;
+        max-width: 1200px;
+        display: grid;
+        grid-template: repeat(4,183.33px) / repeat(6,183.33px);
+        gap: 20px;
+    }
+    .spots .cardGrid .card{
+        position: relative;
+        border-radius: 24px;
+        border: 1px solid var(--main);
+        overflow: hidden;
+    }
+    .spots .cardGrid .card .caption{
+        left: 30px;
+        bottom: 25px;
+    }
+    .spots .cardGrid .card .caption .tag{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .card .caption h3{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .card .caption .loc{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .c01{
+        grid-area: 1 / 1 / 3 / 3;
+    }
+    .spots .cardGrid .c02{
+        grid-area: 1 / 3 / 3 / 5;
+    }
+    .spots .cardGrid .c03{
+        grid-area: 1 / 5 / 2 / 7;
+    }
+    .spots .cardGrid .c04{
+        grid-area: 2 / 5 / 3 / 7;
+    }
+    .spots .cardGrid .c05{
+        grid-area: 3 / 1 / 5 / 5;
+    }
+    .spots .cardGrid .c06{
+        grid-area: 3 / 5 / 5 / 7;
+    }
 }
 
 
 /*----------活動----------*/
 
 .activities .content{
-    margin: 144px auto;
-    padding: 0 40px;
-    max-width: 1200px;
+    margin: 32px auto;
+    width: 100%;
     display: flex;
     gap: 20px;
     position: relative;
+    overflow-y: scroll;
 }
 .activities .content .timeline{
+    width: 100%;
     position: absolute;
-    bottom: 90px;
+    bottom: 66px;
+    left: 32px;
 }
 .activities .content .activity{
+    padding-left: 32px;
     text-align: center;
     position: relative;
 }
@@ -257,26 +343,23 @@
     background-color: #fff;
     text-align: left;
     position: absolute;
-    top: -32px;
-    left: 0;
+    top: 0px;
+    left: 32px;
     z-index: 3;
 }
 .activities .content .activity .pic{
-    width: 389px;
-    height: 218px;
-    background-color: var(--main);
+    width: 80vw;
+    height: 40vw;
+    border: 2px solid var(--main);
+    border-radius: 50%;
     position: relative;
-    clip-path: ellipse(50% 50% at 50% 50%);
+    top: 40px;
     overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
 }
 .activities .content .activity .pic img{
-    width: 387px;
-    height: 216px;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    clip-path: ellipse(50% 50% at 50% 50%);
-    overflow: hidden;
+    width: 100%;
     transition: 0.5s linear;
 }
 .activities .content .activity .pic:hover img{
@@ -286,13 +369,13 @@
 .activities .content .activity .detail{
     position: absolute;
     right: 0;
-    top: 160px;
+    top: 180px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 .activities .content .activity .detail .loc{
-    padding: 8px 10px 8px 10px;
+    padding: 6px 10px;
     text-align: right;
     color: var(--bg);
     background-color: var(--main);
@@ -302,7 +385,7 @@
     border-top-right-radius: 5px;
 }
 .activities .content .activity .detail .tag{
-    padding: 8px 10px;
+    padding: 6px 10px;
     text-align: right;
     color: var(--bg);
     background-color: var(--main);
@@ -312,7 +395,7 @@
     border-bottom-left-radius: 5px;
 }
 .activities .content .activity .dot{
-    margin: 48px auto 24px;
+    margin: 96px auto 16px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
@@ -320,13 +403,57 @@
 }
 .activities .content .activity .date{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 24px;
 }
 .activities .content .activity .time{
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@media screen and (min-width: 1024px) {
+    .activities .content{
+        margin: 144px auto;
+        padding: 0 40px;
+        max-width: 1200px;
+        overflow: visible;
+    }
+    .activities .content .timeline{
+        bottom: 90px;
+    }
+    .activities .content .activity{
+        padding-left: 0;
+    }
+    .activities .content .activity h4{
+        top: -32px;
+        left: 0;
+    }
+    .activities .content .activity .pic{
+        width: 387px;
+        height: 216px;
+        top: 0;
+    }
+    .activities .content .activity .detail{
+        top: 160px;
+    }
+    .activities .content .activity .detail .loc{
+        padding: 8px 10px;
+    }
+    .activities .content .activity .detail .tag{
+        padding: 8px 10px;
+    }
+    .activities .content .activity .dot{
+        margin: 48px auto 24px;
+    }
+    .activities .content .activity .date{
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .activities .content .activity .time{
+        font-size: 20px;
+        line-height: 32px;
+    }
 }
 
 
