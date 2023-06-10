@@ -37,43 +37,73 @@
 html{
     background-color: var(--bg);
 }
+
+
+/* 文字樣式 */
+
 h1{
     font-family: 'Glow Sans TC Wide Heavy', sans-serif;
-    font-size: 40px;
+    font-size: 32px;
     letter-spacing: 0.06em;
 }
 h2{
    font-family: 'Glow Sans TC Wide ExtraBold', sans-serif; 
-   font-size: 36px;
+   font-size: 24px;
    letter-spacing: 0.05em;
 }
 h3{
-    font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 32px;
+    font-family: 'Glow Sans TC Normal Bold', sans-serif; 
+    font-size: 24px;
     letter-spacing: 0.05em;
 }
 h4{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     letter-spacing: 0.05em;
 }
 p{
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 21px;
+    font-size: 16px;
     letter-spacing: 0.03em;
-    line-height: 42px;
+    line-height: 30px;
     text-align: justify;
 }
 .tag{
     font-family: 'Glow Sans TC Wide Light', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.05em;
 }
 
 .loc{
     font-family: 'Glow Sans TC Compressed Book', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.05em;
+}
+
+@media screen and (min-width: 1024px) {
+    h1{
+        font-size: 40px;
+    }
+    h2{
+       font-size: 36px;
+    }
+    h3{
+        font-size: 32px;
+    }
+    h4{
+        font-size: 24px;
+    }
+    p{
+        font-size: 21px;
+        line-height: 42px;
+    }
+    .tag{
+        font-size: 14px;
+    }
+    
+    .loc{
+        font-size: 14px;
+    }
 }
 
 /*----------導覽列----------*/
