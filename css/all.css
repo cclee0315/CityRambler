@@ -109,7 +109,7 @@ p{
 /*----------導覽列----------*/
 .topBar{
     border-bottom: 2px solid var(--main);
-    padding: 16px 64px;
+    padding: 16px 32px;
     display: flex;
     align-items: center;
     position: sticky;
@@ -118,33 +118,48 @@ p{
     background-color: var(--bg);
 }
 .logoHor{
-    width: 240px;
+    width: 160px;
 }
 .logoHor img{
     width: 100%;
 }
 .weather{
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Glow Sans TC wide ExtraBold', sans-serif;
-    font-size: 24px;
-}
-.weather_icon{
-    font-size: 32px;
+    display: none;
 }
 .menu{
-    padding-left: 48px;
+    margin-left: auto;
 }
 .menu_button{
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border: none;
-    background-color: var(--bg);
-    font-size: 28px;
+    font-size: 24px;
     position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+    .topBar{
+        padding: 16px 64px;
+    }
+    .logoHor{
+        width: 240px;
+    }
+    .weather{
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Glow Sans TC wide ExtraBold', sans-serif;
+        font-size: 24px;
+    }
+    .weather_icon{
+        font-size: 32px;
+    }
+    .menu{
+        margin-left: 48px;
+    }
+    .menu_button{
+        cursor: pointer;
+        font-size: 28px;
+        position: relative;
+    }
 }
 
     /*----------隱藏菜單----------*/
@@ -168,7 +183,7 @@ p{
     .close{
         position: absolute;
         top: 32px;
-        right: 56px;
+        right: 64px;
         font-size: 30px;
         cursor: pointer;
     }
@@ -182,8 +197,10 @@ p{
     .hiddenMenu nav li{
         font-family: 'Glow Sans TC Wide Bold', sans-serif;
         font-size: 24px;
-        text-decoration: underline;
         padding-bottom: 42px;
+    }
+    .hiddenMenu nav li a{
+        text-decoration: none;
     }
     .SNS{
         padding-top: 160px;
