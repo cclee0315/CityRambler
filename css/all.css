@@ -303,14 +303,14 @@ footer{
     text-align: center;
 }
 .subscribe{
-    padding-top: 112px;
+    padding-top: 80px;
     padding-bottom: 112px;
     border-bottom: 1px solid var(--bg);
     text-align: center;
 }
 .subscribe .logo{
     margin: 0 auto;
-    width: 185px;
+    width: 120px;
 }
 .subscribe .logo img{
     width: 100%;
@@ -321,76 +321,151 @@ footer{
 }
 .subscribe p{
     color: var(--bg);
+    margin: 0 48px;
+    padding-top: 12px;
     text-align: center;
-    padding-top: 28px;
     font-family: 'Glow Sans TC Wide Light', sans-serif;
-    font-size: 18px;
+    font-size: 12px;
     letter-spacing: 0.05em;
 }
 .subscribe .emailInput{
     position: relative;
-    padding-top: 56px;
+    padding-top: 12px;
+    margin: 0 48px;
+    border-bottom: 1px solid var(--bg);
 }
 .subscribe .emailInput input{
-    width: 600px;
-    height: 48px;
+    width: 100%;
+    height: 32px;
     border: none;
-    border-bottom: 1px solid var(--bg);
     background-color: var(--main);
     color: var(--bg);
-    font-size: 28px;
+    font-size: 16px;
 }
 .subscribe .emailInput input:focus{
     outline: none;
-    border-bottom: 1px solid var(--bg);
 }
 .subscribe .emailInput input::placeholder{
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 24px;
+    font-size: 16px;
 }
 .subscribe .emailInput a{
+    width: 56px;
     position: absolute;
-    margin-left: 16px;
-    background-color: var(--main);
+    right: 0;
+    bottom: -56px;
 }
+.subscribe .emailInput a img{
+    width: 100%;
+}
+
 footer .nav{
     margin: 0 auto;
-    max-width: 1280px;
-    display: flex;
-    padding: 80px 40px;
-    justify-content: space-between;
+    padding: 64px 48px;
 }
 footer .nav .menu ul{
+    width: 100%;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 16px;
 }
 footer .nav .menu li{
-    width: 184px;
+    width: 100%;
     border-bottom: 1px solid var(--bg);
     text-align: left;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
 }
 footer .nav .menu li a{
     color: var(--bg);
     font-family: 'Glow Sans TC Wide Bold', sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     text-decoration: none;
 }
 footer .nav .SNS{
-    padding-top: 0;
+    padding-top: 32px;
+    padding-bottom: 0;
+    justify-content: center;
+    
 }
 footer .nav .SNS i{
     color: var(--bg);
 }
 footer .copyright{
     border-top: 1px solid var(--bg);
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding: 24px 28px 40px;
 }
 footer .copyright p{
     font-family: 'Glow Sans TC Wide Light', sans-serif;
-    font-size: 14px;
+    font-size: 10px;
+    line-height: 1.5em;
     letter-spacing: 0.05em;
     color: var(--bg);
     text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .subscribe{
+        padding-top: 112px;
+        padding-bottom: 112px;
+    }
+    .subscribe .logo{
+        width: 185px;
+    }
+    .subscribe p{
+        margin: 0 auto;
+        max-width: 1200px;
+        padding-top: 18px;
+        font-size: 18px;
+    }
+    .subscribe .emailInput{
+        width: auto;
+        border-bottom: none;
+        padding-top: 40px;
+    }
+    .subscribe .emailInput input{
+        width: 600px;
+        height: 48px;
+        border-bottom: 1px solid var(--bg);
+        font-size: 28px;
+    }
+    .subscribe .emailInput input::placeholder{
+        font-size: 24px;
+    }
+    .subscribe .emailInput a{
+        width: auto;
+        position: absolute;
+        margin-left: 16px;
+        right: auto;
+        bottom: auto;
+    }
+
+    footer .nav{
+        max-width: 1200px;
+        padding: 80px 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .nav .menu ul{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    footer .nav .menu li{
+        width: 184px;
+        padding-bottom: 12px;
+    }
+    footer .nav .menu li a{
+        font-size: 24px;
+    }
+    footer .nav .SNS{
+        margin-top: 0;
+        padding-top: 0;
+    }
+    footer .copyright{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    footer .copyright p{
+        font-size: 14px;
+    }
 }
