@@ -249,24 +249,52 @@ p{
 
 
 /*-----------引言---------*/
-.mainPic{
-    padding-top: 80px;
-}
 .intro{
-    padding-top: 64px;
+    padding-top: 56px;
     text-align: center;
+}
+.mainPic{
+    padding-top: 56px;
+}
+.mainPic img{
+    width: 60%;
+}
+p.intro{
+    padding-top: 16px;
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 21px;
-    letter-spacing: 1px;
-    padding-bottom: 56px;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    padding-bottom: 28px;
+
 }
 .downArrowWide{
     padding-bottom: 80px;
 }
-/* .menu:hover .hiddenMenu{
-    display: flex;
-    position: absolute;
-} */
+.downArrowWide img{
+    width: 120px;
+}
+
+@media screen and (min-width: 1024px) {
+    .intro{
+        padding-top: 64px;
+    }
+    .mainPic{
+        padding-top: 80px;
+    }
+    .mainPic img{
+        width: auto;
+    }
+    p.intro{
+        padding-top: 48px;
+        font-size: 21px;
+        letter-spacing: 1px;
+        padding-bottom: 56px;
+    
+    }
+    .downArrowWide img{
+        width: auto;
+    }
+}
 
 
 /*----------頁尾----------*/
