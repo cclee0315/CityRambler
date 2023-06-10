@@ -130,7 +130,7 @@ p{
     margin-left: auto;
 }
 .menu_button{
-    font-size: 24px;
+    font-size: 28px;
     position: relative;
 }
 
@@ -168,42 +168,42 @@ p{
         flex-direction: column;
         align-items: flex-end;
         text-align: right;
-        padding-top: 144px;
-        padding-right: 96px;
-        padding-bottom: 160px;
-        padding-left: 144px;
+        box-sizing: border-box;
+        min-width: 75%;
+        height: 100vh;
+        padding-top: 104px;
+        padding-right: 72px;
         position: absolute;
         top: 0;
         right: 0;
         z-index: 20;
-        height: 100vh;
         background-color: var(--bg);
         border-left: 2px solid var(--main);
     }
     .close{
         position: absolute;
-        top: 32px;
-        right: 64px;
-        font-size: 30px;
-        cursor: pointer;
+        top: 16px;
+        right: 32px;
+        font-size: 36px;
     }
     .logoSqr{
-        width: 114px;
-        padding-bottom: 72px;
+        width: 96px;
+        padding-bottom: 48px;
     }
     .logoSqr img{
         width: 100%;
     }
     .hiddenMenu nav li{
         font-family: 'Glow Sans TC Wide Bold', sans-serif;
-        font-size: 24px;
-        padding-bottom: 42px;
+        font-size: 20px;
+        padding-bottom: 32px;
     }
     .hiddenMenu nav li a{
         text-decoration: none;
     }
     .SNS{
-        padding-top: 160px;
+        margin-top: auto;
+        padding-bottom: 120px;
         display: flex;
         gap: 32px;
     }
@@ -213,6 +213,38 @@ p{
 #showMenu:checked + .menu .hiddenMenu{
     display: flex;
     position: absolute;
+}
+
+@media screen and (min-width: 1024px) {
+
+        .hiddenMenu{
+            min-width: 352px;
+            padding-top: 144px;
+            padding-right: 96px;
+        }
+        .close{
+            top: 32px;
+            right: 64px;
+            cursor: pointer;
+        }
+        .logoSqr{
+            width: 114px;
+            padding-bottom: 72px;
+        }
+        .hiddenMenu nav li{
+            font-size: 24px;
+            padding-bottom: 42px;
+        }
+        .SNS{
+            padding-bottom: 200px;
+        }
+    #showMenu{
+        display: none;
+    }
+    #showMenu:checked + .menu .hiddenMenu{
+        display: flex;
+        position: absolute;
+    }
 }
 
 
