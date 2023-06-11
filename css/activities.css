@@ -1,10 +1,19 @@
 .time{
     font-family: 'Glow Sans TC Normal Regular', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 .date{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .time{
+        font-size: 18px;
+    }
+    .date{
+        font-size: 20px;
+    }
 }
 
 /* ----------隨機推薦---------- */
@@ -13,107 +22,243 @@
     border-bottom: 2px solid var(--main);
 }
 .randomSpot .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 56px 40px;
-    display: flex;
+    margin: 64px auto 32px;
+    padding: 0 32px;
 }
 .randomSpot .title{
-    padding-right: 48px;
-    /* transform: rotate(90degree); */
-    writing-mode: vertical-lr;
-    /* text-orientation: upright; */
-    text-orientation: sideways-right;
-    font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
-    font-size: 32px;
-    letter-spacing: 0.05em;
     color: var(--main);
+}
+.randomSpot .title h2{
+    display: inline-block;
 }
 .randomSpot .title img{
     transform: rotate(90deg);
+    width: 22px;
 }
 .randomSpot .pic{
-    max-height: 232px;
-    min-width: 504px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-height: 144px;
     overflow: hidden;
     border-radius: 50%;
     border: 1px solid var(--main);
-    vertical-align: middle;
 }
 .randomSpot .pic img{
     width: 100%;
 }
 .randomSpot .info{
-    padding-left: 56px;
-    padding-right: 20px;
     position: relative;
+    margin-bottom: 16px;
 }
 .randomSpot .info .time{
-    padding-bottom: 32px;
+    padding-bottom: 16px;
 }
 .randomSpot .info h3{
-    padding-bottom: 40px;
+    padding-bottom: 16px;
 }
 .randomSpot .info .loc{
     padding-bottom: 8px;
 }
 .randomSpot .btnGo{
-    align-self: self-end;
+    text-align: right;
 }
+
+@media screen and (min-width: 1024px) {
+    .randomSpot .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 56px 40px;
+        display: flex;
+    }
+    .randomSpot .title{
+        padding-right: 48px;
+        writing-mode: vertical-lr;
+        text-orientation: sideways-right;
+        font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
+        font-size: 32px;
+        letter-spacing: 0.05em;
+    }
+    .randomSpot .title img{
+        width: auto;
+    }
+    .randomSpot .pic{
+        margin: 0;
+        max-height: 260px;
+    }
+    .randomSpot .info{
+        padding-left: 56px;
+        padding-right: 20px;
+    }
+    .randomSpot .info .time{
+        padding-bottom: 32px;
+    }
+    .randomSpot .info h3{
+        padding-bottom: 40px;
+    }
+    .randomSpot .btnGo{
+        align-self: self-end;
+    }
+}
+
 
 /* ----------活動---------- */
 .activities{
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 160px 40px;
-    text-align: center;
+    padding: 64px 32px;
 }
 .activities .wrap{
-    overflow-y: scroll;
-    overflow-x: hidden;
-    max-height: 780px;
+    margin-top: 48px;
 }
 .activities .timeline{
     position: absolute;
-    left: 284px;
-    top: 112px;
+    left: 32px;
+    top: 64px;
 }
 .activities .activity{
-    display: flex;
-    align-items: center;
-    padding-bottom: 64px;
+    width: 90%;
+    position: relative;
+    left: 32px;
+    margin-bottom: 32px;
 }
 .activities .activity .time{
     width: 230px;
-    text-align: right;
     padding-right: 16px;
     line-height: 1.5em;
 }
 .activities .activity .dot{
+    position: absolute;
+    top: 6px;
+    left: -30px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background-color: var(--main);
 }
 .activities .activity .pic{
+    min-width: 100%;
     overflow: hidden;
-    max-width: 387px;
-    max-height: 217px;
     border-radius: 50%;
     border: 1px solid var(--main);
-    margin: 0 32px;
+    margin-top: 16px;
+}
+.activities .activity .pic img{
+    width: 100%;
 }
 .activities .activity .info{
     display: flex;
     flex-direction: column;
-    max-width: 388px;
-    align-items: start;
+    align-items: end;
+    position: relative;
+    top: -16px;
+    /* max-width: 388px; */
 }
 .activities .activity .info h3{
     text-align: left;
-    padding-bottom: 32px;
+    display: inline-block;
+    padding: 12px;
+    border: 1px solid var(--main);
+    border-radius: 5px;
+    background-color: #fff;
+    align-self: flex-start;
 }
 .activities .activity .info .loc{
-    padding-bottom: 8px;
+    margin-top: -8px;
+    display: inline-block;
+    padding: 6px 10px;
+    text-align: right;
+    color: var(--bg);
+    background-color: var(--main);
+    border: 1px solid var(--bg);
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.activities .activity .info .tag{
+    display: inline-block;
+    padding: 6px 10px;
+    text-align: right;
+    color: var(--bg);
+    background-color: var(--main);
+    border: 1px solid var(--bg);
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+@media screen and (min-width: 1024px) {
+    .activities{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 160px 40px;
+    }
+    .activities .wrap{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 780px;
+        margin: 0;
+    }
+    .activities .timeline{
+        left: 284px;
+        top: 112px;
+    }
+    .activities .activity{
+        display: flex;
+        width: auto;
+        left: 0;
+        flex-direction: row;
+        align-items: center;
+    }
+    .activities .activity .time{
+        width: 230px;
+        text-align: right;
+        padding-right: 16px;
+        line-height: 1.5em;
+    }
+    .activities .activity .time .date{
+        display: block;
+    }
+    .activities .activity .dot{
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .activities .activity .pic{
+        min-width: auto;
+        overflow: hidden;
+        max-width: 387px;
+        max-height: 217px;
+        margin: 0 32px;
+    }
+    .activities .activity .info{
+        display: block;
+        max-width: 388px;
+        align-items: start;
+        top: 0;
+    }
+    .activities .activity .info h3{
+        display: block;
+        padding: 0;
+        padding-bottom: 32px;
+        border: none;
+        background: none;
+    }
+    .activities .activity .info .loc{
+        margin: 0;
+        display: block;
+        padding: 0;
+        padding-bottom: 8px;
+        text-align: left;
+        color: var(--main);
+        background: none;
+        border: none;
+    }
+    .activities .activity .info .tag{
+        display: block;
+        padding: 0;
+        text-align: left;
+        color: var(--main);
+        background: none;
+        border: none;
+    }
 }
