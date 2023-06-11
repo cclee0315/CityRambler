@@ -55,6 +55,7 @@ h3{
     font-family: 'Glow Sans TC Normal Bold', sans-serif; 
     font-size: 24px;
     letter-spacing: 0.05em;
+    line-height: 32px;
 }
 h4{
     font-family: 'Glow Sans TC Normal Bold', sans-serif;
@@ -89,6 +90,7 @@ p{
     }
     h3{
         font-size: 32px;
+        line-height: 46px;
     }
     h4{
         font-size: 24px;

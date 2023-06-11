@@ -82,9 +82,15 @@
 
 /* ----------路線內容---------- */
 .routeContent{
-    max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 40px 200px;
+    padding-top: 48px;
+} 
+
+@media screen and (min-width: 1024px) {
+    .routeContent{
+        max-width: 1200px;
+        padding: 120px 40px 200px;
+    }
 }
     
     /* ----------封面圖片---------- */
@@ -94,45 +100,67 @@
 
     /* ----------資訊---------- */
     .routeContent .info{
-        padding-top: 80px;
-        padding-bottom: 120px;
+        padding: 40px 32px 64px;
     }
     .routeContent .info header{
-        position: relative;
+        display: flex;
+        flex-direction: column;
     }
     .routeContent .info header .distance{
-        position: absolute;
-        right: 0;
-        top: 0;
         font-family: 'Glow Sans TC Normal Bold', sans-serif;
-        font-size: 16px;
+        padding-top: 24px;
+        font-size: 12px;
         letter-spacing: 0.03em;
     }
     .routeContent .info header .tags{
         display: flex;
-        gap: 8px;
-        padding-top: 32px;
+        gap: 4px;
+        padding-top: 8px;
     }
     .routeContent .info .brief{
-        padding-top: 64px;
-        columns: 3;
-        column-gap: 56px;
+        padding-top: 32px;
     }
     .routeContent .info .brief p{
         margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .routeContent .info{
+            padding: 80px 0 120px;
+        }
+        .routeContent .info header{
+            display: block;
+            position: relative;
+        }
+        .routeContent .info header .distance{
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 16px;
+            padding-top: 0;
+        }
+        .routeContent .info header .tags{
+            gap: 8px;
+            padding-top: 32px;
+        }
+        .routeContent .info .brief{
+            padding-top: 64px;
+            columns: 3;
+            column-gap: 56px;
+        }
     }
     
     /*----------路線圖----------*/
     .routeMap{
         position: relative;
         text-align: center;
+        padding: 0 32px;
     }
     .routeMap .spot{
         position: relative;
     }
     .routeMap .spot .pic{
-        width: 426px;
-        height: 285px;
+        width: 100%;
         border-radius: 250px;
         border: 1px solid var(--main);
         overflow: hidden;
@@ -143,12 +171,16 @@
         vertical-align: middle;
     }
 
-    /* .routeMap .routeLine .pic{
-        width: 100%;
+    @media screen and (min-width: 1024px) {
+        .routeMap{
+            padding: 0;
+        }
+        
+        .routeMap .spot .pic{
+            width: 426px;
+            height: 285px;
+        }
     }
-    .routeMap .routeLine .pic img{
-        width: 100px;
-    } */
 
         /* 路線起點 */
         .routeMap .start{
@@ -166,57 +198,72 @@
             color: var(--bg);
         }
         .routeMap .start .pic{
-            position: relative;
-            left: calc((100%-220px)/12);
             z-index: -1;
         }
         .routeMap .start .txt{
-            background-color: var(--bg);
-            position: absolute;
-            top: 120px;
             left: calc(50% + 10px);
+            text-align: center;
+            margin-top: 24px;
         }
+
+        @media screen and (min-width: 1024px) {
+            .routeMap .start{
+                text-align: left;
+                position: relative;
+            }
+            .routeMap .start .pic{
+                position: relative;
+                left: calc((100%-220px)/12);
+            }
+            .routeMap .start .txt{
+                background-color: var(--bg);
+                position: absolute;
+                top: 120px;
+                left: calc(50% + 10px);
+                margin: 0;
+            }
+        }
+        
 
         /* 路線中途點（右） */
         .routeMap .right{
-            text-align: right;
-            position: relative;
-            display: flex;
-            flex-direction: row-reverse;
-            margin-top: 80px;
+            margin-top: 24px;
         }
         .routeMap .right .routeLine{
-            position: absolute;
-            right: calc((100% - 220px) / 3 + 80px);
-            bottom: 182.5px;
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
             z-index: -2;
+        }
+        .routeMap .right .routeLine img{
+            width: 100%;
         }
         .routeMap .right .routeLine .due{
             position: absolute;
-            right: calc(50% - 40px);
+            right: calc(50% - 26px);
             bottom: calc(50% + 8px);
             font-family: 'Glow Sans TC Wide Light', sans-serif;
-            font-size: 18px;
+            font-size: 14px;
         }
         .routeMap .right header{
             position: absolute;
             text-align: left;
-            right: 0;
-            bottom: 16px;
+            right: -2%;
+            bottom: 25%;
         }
         .routeMap .right .tag{
             display: inline-block;
-            padding: 6px 16px;
+            padding: 6px 12px;
             border: 1px solid var(--main);
-            border-bottom: 0;
+            border-bottom: none;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             background-color: #fcfcfc;
             color: var(--main);
         }
         .routeMap .right .name{
-            /* display: inline-block; */
-            padding: 12px 16px;
+            max-width: 220px;
+            padding: 8px 12px;
             border: 1px solid var(--main);
             border-radius: 5px;
             border-top-left-radius: 0;
@@ -229,59 +276,98 @@
             bottom: -40px;
         }
         .routeMap .right .pic{
+            margin-top: 24px;
             position: relative;
-            right: calc((100%-220px)/12);
             z-index: -1;
         }
         .routeMap .right .txt{
+            margin-top: 24px;
             background-color: var(--bg);
-            position: absolute;
-            text-align: right;
-            top: 120px;
-            right: calc(50% + 10px);
+            text-align: center;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .routeMap .right{
+                text-align: right;
+                position: relative;
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 80px;
+            }
+            .routeMap .right .routeLine{
+                width: auto;
+                margin: 0;
+                position: absolute;
+                right: calc((100% - 220px) / 3 + 80px);
+                bottom: 182.5px;
+            }
+            .routeMap .right .routeLine .due{
+                right: calc(50% - 40px);
+                font-size: 18px;
+            }
+            .routeMap .right header{
+                right: 0;
+                bottom: 16px;
+            }
+            .routeMap .right .tag{
+                padding: 6px 16px;
+            }
+            .routeMap .right .name{
+                max-width: 100%;
+                padding: 12px 16px;
+            }
+            .routeMap .right .pic{
+                right: calc((100%-220px)/12);
+            }
+            .routeMap .right .txt{
+                margin-top: 0;
+                position: absolute;
+                text-align: right;
+                top: 120px;
+                right: calc(50% + 10px);
+            }
         }
 
 
         /* 路線中途點（左） */
         .routeMap .left{
-            text-align: left;
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            margin-top: 80px;
+            margin-top: 24px;
         }
         .routeMap .left .routeLine{
-            position: absolute;
-            left: calc((100% - 220px) / 3 + 80px);
-            bottom: 182.5px;
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
             z-index: -2;
+        }
+        .routeMap .left .routeLine img{
+            width: 100%;
         }
         .routeMap .left .routeLine .due{
             position: absolute;
-            left: calc(50% - 40px);
+            left: calc(50% - 26px);
             bottom: calc(50% + 8px);
             font-family: 'Glow Sans TC Wide Light', sans-serif;
-            font-size: 18px;
+            font-size: 14px;
         }
         .routeMap .left header{
             position: absolute;
             text-align: left;
-            left: 0;
-            top: 16px;
+            left: -2%;
+            top: 38%;
         }
         .routeMap .left .tag{
             display: inline-block;
-            padding: 6px 16px;
+            padding: 6px 12px;
             border: 1px solid var(--main);
-            border-bottom: 0;
+            border-bottom: none;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             background-color: #fcfcfc;
             color: var(--main);
         }
         .routeMap .left .name{
-            /* display: inline-block; */
-            padding: 12px 16px;
+            max-width: 220px;
+            padding: 8px 12px;
             border: 1px solid var(--main);
             border-radius: 5px;
             border-top-left-radius: 0;
@@ -294,39 +380,85 @@
             bottom: -40px;
         }
         .routeMap .left .pic{
+            margin-top: 24px;
             position: relative;
-            left: calc((100%-220px) / 12);
             z-index: -1;
         }
         .routeMap .left .txt{
+            margin-top: 24px;
             background-color: var(--bg);
-            position: absolute;
-            text-align: left;
-            top: 120px;
-            left: calc(50% + 10px);
+            text-align: center;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .routeMap .left{
+                text-align: left;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                margin-top: 80px;
+            }
+            .routeMap .left .routeLine{
+                width: auto;
+                margin: 0;
+                position: absolute;
+                left: calc((100% - 220px) / 3 + 80px);
+                bottom: 182.5px;
+            }
+            .routeMap .left .routeLine .due{
+                left: calc(50% - 40px);
+                font-size: 18px;
+            }
+            .routeMap .left header{
+                left: 0;
+                top: 16px;
+            }
+            .routeMap .left .tag{
+                padding: 6px 16px;
+            }
+            .routeMap .left .name{
+                max-width: 100%;
+                padding: 12px 16px;
+
+            }
+            .routeMap .left .pic{
+                margin-top: 0;
+                left: calc((100%-220px) / 12);
+
+            }
+            .routeMap .left .txt{
+                margin-top: 0;
+                position: absolute;
+                text-align: left;
+                top: 120px;
+                left: calc(50% + 10px);
+            }
         }
 
         /* 路線終點 */
         .routeMap .end{
             text-align: left;
             position: relative;
-            margin-top: 80px;
+            margin-top: 24px;
         }
         .routeMap .end .routeLine{
-            position: absolute;
-            right: calc((100% - 220px) / 3 + 80px);
-            bottom: 182.5px;
+            position: relative;
+            width: 60%;
+            margin: 0 auto;
             z-index: -2;
+        }
+        .routeMap .end .routeLine img{
+            width: 100%;
         }
         .routeMap .end .routeLine .due{
             position: absolute;
-            right: calc(50% - 40px);
+            right: calc(50% - 26px);
             bottom: calc(50% + 8px);
             font-family: 'Glow Sans TC Wide Light', sans-serif;
-            font-size: 18px;
+            font-size: 14px;
         }
         .routeMap .end .name{
-            top: 16px;
+            top: 40%;
             position: absolute;
             display: inline-block;
             padding: 12px 16px;
@@ -335,55 +467,99 @@
             color: var(--bg);
         }
         .routeMap .end .pic{
-            position: relative;
-            left: calc((100%-220px)/12);
+            margin-top: 24px;
             z-index: -1;
         }
         .routeMap .end .txt{
-            background-color: var(--bg);
-            position: absolute;
-            top: 120px;
             left: calc(50% + 10px);
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 64px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .routeMap .end{
+                margin-top: 80px;
+            }
+            .routeMap .end .routeLine{
+                width: auto;
+                margin: 0;
+                position: absolute;
+                right: calc((100% - 220px) / 3 + 80px);
+                bottom: 182.5px;
+            }
+            .routeMap .end .routeLine .due{
+                position: absolute;
+                right: calc(50% - 40px);
+                bottom: calc(50% + 8px);
+                font-family: 'Glow Sans TC Wide Light', sans-serif;
+                font-size: 18px;
+            }
+            .routeMap .end .routeLine .due{
+                right: calc(50% - 40px);
+                font-size: 18px;
+            }
+            .routeMap .end .name{
+                top: 16px;
+            }
+            .routeMap .end .pic{
+                margin-top: 0;
+                z-index: -1;
+            }
+            .routeMap .end .txt{
+                background-color: var(--bg);
+                position: absolute;
+                top: 120px;
+                left: calc(50% + 10px);
+                margin-top: 0;
+            }
         }
 
         /* 單獨小圖定位 */
         .routeMap .spot .sidoli_item01{
+            display: none;
             z-index: 5;
             position: absolute;
             top: -30px;
             right: 40px;
         }
         .routeMap .spot .sidoli_item02{
+            display: none;
             z-index: 5;
             position: absolute;
             bottom: -30px;
             right: calc((100%-220px)/12 + 320px);
         }
         .routeMap .spot .ADLP_item01{
+            display: none;
             z-index: 5;
             position: absolute;
             bottom: -30px;
             left: calc((100%-220px)/12 + 260px);
         }
         .routeMap .spot .XH_item01{
+            display: none;
             z-index: 5;
             position: absolute;
             bottom: -60px;
             right: calc((100%-220px)/12 + 260px);
         }
         .routeMap .spot .WHH_item01{
+            display: none;
             z-index: 5;
             position: absolute;
             bottom: -10px;
             left: calc((100%-220px)/12 + 330px);
         }
         .routeMap .spot .CST_item01{
+            display: none;
             z-index: 5;
             position: absolute;
             top: 20px;
             right: 70px;
         }
         .routeMap .spot .CST_item02{
+            display: none;
             z-index: 5;
             position: absolute;
             top: -30px;
