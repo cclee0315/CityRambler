@@ -238,7 +238,7 @@
     align-items: flex-start;
 }
 .spots .cardGrid .card .caption .tag{
-    padding: 6px 10px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     border-bottom: none;
     background-color: var(--bg);
@@ -246,14 +246,14 @@
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption h3{
-    padding: 6px 10px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     background-color: var(--bg);
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption .loc{
-    padding: 6px 10px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     border-top: none;
     background-color: var(--bg);

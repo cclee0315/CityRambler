@@ -3,28 +3,24 @@
     border-top: 1px solid var(--main);
 }
 .randomSpot .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 56px 40px;
-    display: flex;
+    margin: 64px auto;
+    padding: 0 32px;
 }
 .randomSpot .title{
-    padding-right: 48px;
-    /* transform: rotate(90degree); */
-    writing-mode: vertical-lr;
-    /* text-orientation: upright; */
-    text-orientation: sideways-right;
-    font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
-    font-size: 32px;
-    letter-spacing: 0.05em;
     color: var(--main);
+}
+.randomSpot .title h2{
+    display: inline-block;
 }
 .randomSpot .title img{
     transform: rotate(90deg);
+    width: 22px;
 }
 .randomSpot .pic{
-    max-height: 232px;
-    min-width: 504px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    width: 100%;
+    max-height: 144px;
     overflow: hidden;
     border-radius: 20px;
     border: 1px solid var(--main);
@@ -33,15 +29,12 @@
     width: 100%;
 }
 .randomSpot .info{
-    padding-left: 56px;
-    padding-right: 20px;
     position: relative;
-}
-.randomSpot .info .loc{
-    padding-bottom: 16px;
+    margin-bottom: 16px;
 }
 .randomSpot .info h3{
-    padding-bottom: 40px;
+    padding-top: 12px;
+    padding-bottom: 16px;
 }
 .randomSpot .info .tag{
     position: absolute;
@@ -49,7 +42,46 @@
     right: 0;
 }
 .randomSpot .btnGo{
-    align-self: self-end;
+    text-align: right;
+}
+
+@media screen and (min-width: 1024px) {
+    .randomSpot .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 56px 40px;
+        display: flex;
+    }
+    .randomSpot .title{
+        padding-right: 48px;
+        writing-mode: vertical-lr;
+        text-orientation: sideways-right;
+        color: var(--main);
+    }
+    .randomSpot .title img{
+        width: auto;
+    }
+    .randomSpot .pic{
+        margin-top: 0;
+        margin-bottom: 0;
+        max-height: 260px;
+    }
+    .randomSpot .info{
+        padding-left: 56px;
+        padding-right: 20px;
+        margin-bottom: 0;
+        position: relative;
+    }
+    .randomSpot .info .loc{
+        padding-bottom: 16px;
+    }
+    .randomSpot .info h3{
+        padding-top: 0;
+        padding-bottom: 40px;
+    }
+    .randomSpot .btnGo{
+        align-self: self-end;
+    }
 }
 
 
@@ -108,19 +140,16 @@
 
 /*----------探索點----------*/
 .spots .cardGrid{
-    margin: 0 auto;
-    /* padding-top: 112px; */
-    /* padding-bottom: 80px; */
-    max-width: 1200px;
-    display: grid;
-    /* grid-template: repeat(4,1fr) / repeat(6,1fr); */
-    grid-template: repeat(8,183.33px) / repeat(6,183.33px);
-    gap: 20px;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .spots .copy01{
     display: none;
 }
 .spots .cardGrid .card{
+    width: 100%;
     position: relative;
     border-radius: 24px;
     border: 1px solid var(--main);
@@ -128,14 +157,14 @@
 }
 .spots .cardGrid .card .caption{
     position: absolute;
-    left: 30px;
-    bottom: 25px;
+    left: 20px;
+    bottom: 14px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .spots .cardGrid .card .caption .tag{
-    padding: 6px 16px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     border-bottom: none;
     background-color: var(--bg);
@@ -143,14 +172,14 @@
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption h3{
-    padding: 6px 16px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     background-color: var(--bg);
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .spots .cardGrid .card .caption .loc{
-    padding: 6px 16px;
+    padding: 6px 12px;
     border: 1px solid var(--main);
     border-top: none;
     background-color: var(--bg);
@@ -166,42 +195,81 @@
     scale: 1.1;
     transition: 0.5s linear;
 }
-.spots .cardGrid .c01{
-    grid-area: 1 / 1 / 5 / 5;
-}
-.spots .cardGrid .c02{
-    grid-area: 1 / 5 / 2 / 7;
-}
-.spots .cardGrid .c03{
-    grid-area: 2 / 5 / 4 / 7;
-}
-.spots .cardGrid .c04{
-    grid-area: 4 / 5 / 5 / 7;
-}
-.spots .cardGrid .c05{
-    grid-area: 5 / 1 / 7 / 3;
-}
-.spots .cardGrid .c06{
-    grid-area: 5 / 3 / 7 / 7;
-}
-.spots .cardGrid .c07{
-    grid-area: 7 / 1 / 9 / 5;
-}
-.spots .cardGrid .c08{
-    grid-area: 7 / 5 / 9 / 7;
-}
 .spots .lookMore{
+    margin: 40px auto 96px;
+    width: 112px;
     text-align: center;
-    margin-top: 80px;
-    padding-bottom: 128px;
 }
 .spots .lookMore .text{
     display: block;
     font-family: 'Glow Sans TC Wide Light', sans-serif;
-    font-size: 20px;
+    font-size: 14px;
     letter-spacing: 0.1em;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
 }
 .spots .lookMore img{
+    width: 100%;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .spots .cardGrid{
+        padding: 0;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template: repeat(8,183.33px) / repeat(6,183.33px);
+        gap: 20px;
+    }
+    .spots .copy01{
+        display: none;
+    }
+    .spots .cardGrid .card{
+        overflow: hidden;
+    }
+    .spots .cardGrid .card .caption{
+        left: 30px;
+        bottom: 25px;
+    }
+    .spots .cardGrid .card .caption .tag{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .card .caption h3{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .card .caption .loc{
+        padding: 6px 16px;
+    }
+    .spots .cardGrid .c01{
+        grid-area: 1 / 1 / 5 / 5;
+    }
+    .spots .cardGrid .c02{
+        grid-area: 1 / 5 / 2 / 7;
+    }
+    .spots .cardGrid .c03{
+        grid-area: 2 / 5 / 4 / 7;
+    }
+    .spots .cardGrid .c04{
+        grid-area: 4 / 5 / 5 / 7;
+    }
+    .spots .cardGrid .c05{
+        grid-area: 5 / 1 / 7 / 3;
+    }
+    .spots .cardGrid .c06{
+        grid-area: 5 / 3 / 7 / 7;
+    }
+    .spots .cardGrid .c07{
+        grid-area: 7 / 1 / 9 / 5;
+    }
+    .spots .cardGrid .c08{
+        grid-area: 7 / 5 / 9 / 7;
+    }
+    .spots .lookMore{
+        margin: 80px 0 128px;
+        width: auto;
+    }
+    .spots .lookMore .text{
+        font-size: 20px;
+        padding-bottom: 24px;
+    }
 }
