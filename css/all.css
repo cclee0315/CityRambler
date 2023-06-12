@@ -125,6 +125,9 @@ p{
 .logoHor img{
     width: 100%;
 }
+.location{
+    display: none;
+}
 .weather{
     display: none;
 }
@@ -143,8 +146,19 @@ p{
     .logoHor{
         width: 240px;
     }
-    .weather{
+    .location{
         margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Glow Sans TC wide ExtraBold', sans-serif;
+        font-size: 24px;
+    }
+    .pin_icon{
+        font-size: 32px;
+    }
+    .weather{
+        margin-left: 32px;
         display: flex;
         align-items: center;
         gap: 6px;
