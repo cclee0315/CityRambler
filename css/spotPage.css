@@ -1,4 +1,8 @@
 .titleBar{
+    position: sticky;
+    top: 72px;
+    z-index: 9;
+    background-color: var(--bg);
     border-top: 2px solid #000;
     border-bottom: 1px solid #000;
     padding: 16px 0;
@@ -28,6 +32,26 @@
 
 
 /*----------景點文章----------*/
+.breadcrumb{
+    position: sticky;
+    top: 72px;
+    z-index: 9;
+    border-bottom: 1px solid var(--main);
+    padding: 10px;
+    background-color: var(--bg);
+}
+.breadcrumb .container{
+    padding-left: 32px;
+}
+.breadcrumb .container a{
+    font-family: 'Glow Sans TC Normal Regular', sans-serif;
+    font-size: 12px;
+    display: inline;
+    text-decoration: none;
+}
+.breadcrumb .container .now{
+    text-decoration: underline;
+}
 .spot{
     padding: 64px 32px;
     text-align: left;
@@ -84,6 +108,18 @@
 }
 
 @media screen and (min-width: 1024px) {
+    .breadcrumb{
+        padding: 20px;
+        top: 90px;
+    }
+    .breadcrumb .container{
+        padding-left: 0;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .breadcrumb .container a{
+        font-size: 18px;
+    }
     .spot{
         max-width: 1200px;
         margin: 0 auto;
