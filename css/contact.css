@@ -95,6 +95,7 @@ form button{
     form .nameWrap{
         width: 100%;
         display: flex;
+        flex-direction: row;
         padding: 12px 0; 
         border-bottom: 1px solid var(--main);
     }
@@ -102,11 +103,13 @@ form button{
         padding: 0;
         width: 50%;
         border-right: 1px solid var(--main);
+        border-bottom: none;
     }
     form .nameWrap .firstNameWrap{
         width: 50%;
         padding: 0;
         padding-left: 12px;
+        border-bottom: none;
     }
     form .emailWrap{
         padding: 12px 0; 
