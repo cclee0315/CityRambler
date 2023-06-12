@@ -44,12 +44,20 @@
     border-radius: 50%;
     border: 1px solid var(--main);
 }
+.randomSpot .pic:hover img{
+    scale: 1.1;
+    transition: 0.5s linear;
+}
 .randomSpot .pic img{
     width: 100%;
+    transition: 0.5s linear;
 }
 .randomSpot .info{
     position: relative;
     margin-bottom: 16px;
+}
+.randomSpot .info a{
+    text-decoration: none;
 }
 .randomSpot .info .time{
     padding-bottom: 16px;
