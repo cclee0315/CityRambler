@@ -172,7 +172,7 @@ p{
         text-align: right;
         box-sizing: border-box;
         min-width: 75%;
-        height: 100vh;
+        height: 120vh;
         padding-top: 104px;
         padding-right: 72px;
         position: absolute;
@@ -205,7 +205,7 @@ p{
     }
     .SNS{
         margin-top: auto;
-        padding-bottom: 120px;
+        padding-bottom: 40vh;
         display: flex;
         gap: 32px;
     }
