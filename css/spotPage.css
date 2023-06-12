@@ -1,12 +1,10 @@
 .titleBar{
     border-top: 2px solid #000;
     border-bottom: 1px solid #000;
-    padding: 24px 0;
+    padding: 16px 0;
 }
 .titleBar .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,6 +12,18 @@
 .titleBar h2{
     display: inline-block;
 }
+
+@media screen and (min-width: 1024px) {
+    .titleBar{
+        padding: 24px 0;
+        top: 90px;
+    }
+    .titleBar .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 
 
 
@@ -62,7 +72,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 }
 .spot .info .title{
     font-family: 'Glow Sans TC Wide Bold', sans-serif;
@@ -301,7 +311,7 @@
 }
 .related .relSpot .cardGrid .card .pic{
     width: 100%;
-    aspect-ratio: 2 /1;
+    aspect-ratio: 2 / 1;
     overflow: hidden;
 }
 .related .relSpot .cardGrid .card .pic img{
@@ -360,6 +370,9 @@
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         align-self: flex-end;
+    }
+    .related .relSpot .cardGrid .card .pic{
+        aspect-ratio: 1 / 1;
     }
     .related .relSpot .cardGrid .card .pic img{
         width: 100%;
