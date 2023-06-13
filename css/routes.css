@@ -628,3 +628,54 @@
             top: -30px;
             right: 190px;
         }
+        @media screen and (min-width: 1024px) {
+            .routeMap .spot .sidoli_item01{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                top: -30px;
+                right: 40px;
+            }
+            .routeMap .spot .sidoli_item02{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                bottom: -30px;
+                right: calc((100%-220px)/12 + 320px);
+            }
+            .routeMap .spot .ADLP_item01{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                bottom: -30px;
+                left: calc((100%-220px)/12 + 260px);
+            }
+            .routeMap .spot .XH_item01{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                bottom: -60px;
+                right: calc((100%-220px)/12 + 260px);
+            }
+            .routeMap .spot .WHH_item01{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                bottom: -10px;
+                left: calc((100%-220px)/12 + 330px);
+            }
+            .routeMap .spot .CST_item01{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                top: 20px;
+                right: 70px;
+            }
+            .routeMap .spot .CST_item02{
+                display: block;
+                z-index: 5;
+                position: absolute;
+                top: -30px;
+                right: 190px;
+            }
+        }
