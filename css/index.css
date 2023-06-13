@@ -169,10 +169,13 @@
 .routes .content .text .tags{
     margin-top: 64px;
 }
-.routes .content .btnGo {
+.routes .content .btnGo{
     position: absolute;
     right: 0;
     bottom: 0;
+}
+.routes .content .btnGo:hover{
+    transform: translateX(25px);
 }
 
 @media screen and (min-width: 1024px) {

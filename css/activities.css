@@ -16,6 +16,14 @@
     }
 }
 
+@keyframes mainPicAni{
+    0%{rotate: 0deg; transform: translateX(-30px);}
+    100%{rotate: 5deg; transform: translateX(30px);}
+}
+.intro .mainPic{
+    animation: mainPicAni 0.8s linear 0s infinite alternate-reverse;
+}
+
 /* ----------隨機推薦---------- */
 .randomSpot{
     border-top: 2px solid var(--main);

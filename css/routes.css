@@ -1,15 +1,28 @@
+@keyframes mainPicAni{
+    0%{rotate: 0deg;}
+    100%{rotate: 5deg;}
+}
+.intro .mainPic{
+    animation: mainPicAni 1s linear 0s infinite alternate-reverse;
+}
+
 /* ----------地點選單列---------- */
 .locBar{
     width: 100%;
     position: sticky;
-    top: -30px;
+    top: 0px;
     z-index: 9;
+}
+@media screen and (min-width: 1024px) {
+    .locBar{
+        top: -30px;
+    }
 }
 
     /* ----------城市選單---------- */
     .locBar .cityBar{
         background-color: var(--bg);
-        padding: 12px 0;
+        padding: 6px 0;
         display: flex;
         overflow: hidden;
         justify-content: center;
@@ -17,9 +30,9 @@
         border-bottom: 1px solid var(--main);
     }
     .locBar .cityBar .city{
-        padding-right: 96px;
-        padding-left: 96px;
-        color: #392C29;
+        padding-right: 40px;
+        padding-left: 40px;
+        color: var(--main);
         text-align: center;
         border-right: 1px solid var(--main);
     }
@@ -27,14 +40,14 @@
         border-left: 1px solid var(--main);
     }
     .locBar .cityBar .city .icon{
-        width: 160px;
-        font-size: 110px;
+        width: 80px;
+        font-size: 64px;
         cursor: pointer;
         opacity: 0.3;
     }
     .locBar .cityBar .city .name{
         font-family: 'Glow Sans TC Wide Bold', sans-serif;
-        font-size: 24px;
+        font-size: 18px;
         letter-spacing: 0.05em;
         line-height: 34px;
         cursor: pointer;
@@ -48,18 +61,35 @@
         font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
     }
 
+    @media screen and (min-width: 1024px) {
+        .locBar .cityBar{
+            padding: 12px 0;
+        }
+        .locBar .cityBar .city{
+            padding-right: 96px;
+            padding-left: 96px;
+        }
+        .locBar .cityBar .city .icon{
+            width: 160px;
+            font-size: 110px;
+        }
+        .locBar .cityBar .city .name{
+            font-size: 24px;
+        }
+        }
+
     /* ----------路線選單---------- */
     .locBar .routeBar{
         background-color: var(--bg);
-        padding: 12px 0;
+        padding: 6px 0;
         display: flex;
         overflow: hidden;
         justify-content: center;
         border-bottom: 1px solid var(--main);
     }
     .locBar .routeBar .route{
-        padding: 8px 80px;
-        color: #392C29;
+        padding: 8px 40px;
+        color: var(--main);
         text-align: center;
         border-right: 1px solid var(--main);
     }
@@ -67,17 +97,30 @@
         border-left: 1px solid var(--main);
     }
     .locBar .routeBar .route .name{
-        width: 96px;
+        width: 75px;
         font-family: 'Glow Sans TC Wide Bold', sans-serif;
-        font-size: 24px;
+        font-size: 18px;
         letter-spacing: 0.05em;
-        line-height: 34px;
         cursor: pointer;
         opacity: 0.3;
     }
     .locBar .routeBar .selected .name{
         opacity: 1;
         font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .locBar .routeBar{
+            padding: 12px 0;
+        }
+        .locBar .routeBar .route{
+            padding: 8px 80px;
+        }
+        .locBar .routeBar .route .name{
+            width: 96px;
+            font-size: 24px;
+            line-height: 34px;
+        }
     }
 
 /* ----------路線內容---------- */
@@ -94,8 +137,17 @@
 }
     
     /* ----------封面圖片---------- */
+    .routeContent .coverPic{
+        overflow: hidden;
+    }
     .routeContent .coverPic img{
         width: 100%;
+        transition: 1s linear;
+    }
+    .routeContent .coverPic:hover img{
+        scale: 1.1;
+        transform: translateY(20px);
+        transition: 1s linear;
     }
 
     /* ----------資訊---------- */
@@ -169,6 +221,11 @@
         width: 100%;
         text-align: center;
         vertical-align: middle;
+        transition: 1s linear;
+    }
+    .routeMap .spot .pic:hover img{
+        scale: 1.1;
+        transition: 1s linear;
     }
 
     @media screen and (min-width: 1024px) {
@@ -196,9 +253,7 @@
             border-radius: 5px;
             background-color: var(--main);
             color: var(--bg);
-        }
-        .routeMap .start .pic{
-            z-index: -1;
+            z-index: 3;
         }
         .routeMap .start .txt{
             left: calc(50% + 10px);
@@ -214,6 +269,7 @@
             .routeMap .start .pic{
                 position: relative;
                 left: calc((100%-220px)/12);
+                z-index: 1;
             }
             .routeMap .start .txt{
                 background-color: var(--bg);
@@ -250,6 +306,7 @@
             text-align: left;
             right: -2%;
             bottom: 25%;
+            z-index: 3;
         }
         .routeMap .right .tag{
             display: inline-block;
@@ -278,7 +335,6 @@
         .routeMap .right .pic{
             margin-top: 24px;
             position: relative;
-            z-index: -1;
         }
         .routeMap .right .txt{
             margin-top: 24px;
@@ -354,6 +410,7 @@
             text-align: left;
             left: -2%;
             top: 38%;
+            z-index: 3;
         }
         .routeMap .left .tag{
             display: inline-block;
@@ -373,6 +430,7 @@
             border-top-left-radius: 0;
             background-color: #fcfcfc;
             color: var(--main);
+            z-index: 3;
         }
         .routeMap .left .btn{
             position: absolute;
@@ -382,7 +440,6 @@
         .routeMap .left .pic{
             margin-top: 24px;
             position: relative;
-            z-index: -1;
         }
         .routeMap .left .txt{
             margin-top: 24px;
@@ -434,6 +491,9 @@
                 left: calc(50% + 10px);
             }
         }
+        .btn:hover{
+            transform: translateX(25px);
+        }
 
         /* 路線終點 */
         .routeMap .end{
@@ -465,10 +525,10 @@
             border-radius: 5px;
             background-color: var(--main);
             color: var(--bg);
+            z-index: 3;
         }
         .routeMap .end .pic{
             margin-top: 24px;
-            z-index: -1;
         }
         .routeMap .end .txt{
             left: calc(50% + 10px);
