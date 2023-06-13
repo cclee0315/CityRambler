@@ -662,7 +662,7 @@
                 z-index: 5;
                 position: absolute;
                 bottom: -10px;
-                left: calc((100%-220px)/12 + 330px);
+                left: 330px;
             }
             .routeMap .spot .CST_item01{
                 display: block;
