@@ -641,7 +641,7 @@
                 z-index: 5;
                 position: absolute;
                 bottom: -30px;
-                right: calc((100%-220px)/12 + 320px);
+                right: 355px;
             }
             .routeMap .spot .ADLP_item01{
                 display: block;
@@ -655,7 +655,7 @@
                 z-index: 5;
                 position: absolute;
                 bottom: -60px;
-                right: calc((100%-220px)/12 + 260px);
+                right: 280px;
             }
             .routeMap .spot .WHH_item01{
                 display: block;
