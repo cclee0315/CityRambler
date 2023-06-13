@@ -109,16 +109,19 @@
 .locBar{
     width: 100%;
     position: sticky;
-    top: -30px;
+    top: 0px;
     z-index: 9;
-    margin-bottom: 112px;
+}
+@media screen and (min-width: 1024px) {
+    .locBar{
+        top: -30px;
+    }
 }
 
     /* ----------城市選單---------- */
     .locBar .cityBar{
         background-color: var(--bg);
-        padding-top: 16px;
-        padding-bottom: 16px;
+        padding: 6px 0;
         display: flex;
         overflow: hidden;
         justify-content: center;
@@ -126,9 +129,9 @@
         border-bottom: 1px solid var(--main);
     }
     .locBar .cityBar .city{
-        padding-right: 96px;
-        padding-left: 96px;
-        color: #392C29;
+        padding-right: 40px;
+        padding-left: 40px;
+        color: var(--main);
         text-align: center;
         border-right: 1px solid var(--main);
     }
@@ -136,14 +139,14 @@
         border-left: 1px solid var(--main);
     }
     .locBar .cityBar .city .icon{
-        width: 160px;
-        font-size: 110px;
+        width: 80px;
+        font-size: 64px;
         cursor: pointer;
         opacity: 0.3;
     }
     .locBar .cityBar .city .name{
         font-family: 'Glow Sans TC Wide Bold', sans-serif;
-        font-size: 24px;
+        font-size: 18px;
         letter-spacing: 0.05em;
         line-height: 34px;
         cursor: pointer;
@@ -157,8 +160,26 @@
         font-family: 'Glow Sans TC Wide ExtraBold', sans-serif;
     }
 
+    @media screen and (min-width: 1024px) {
+        .locBar .cityBar{
+            padding: 12px 0;
+        }
+        .locBar .cityBar .city{
+            padding-right: 96px;
+            padding-left: 96px;
+        }
+        .locBar .cityBar .city .icon{
+            width: 160px;
+            font-size: 110px;
+        }
+        .locBar .cityBar .city .name{
+            font-size: 24px;
+        }
+    }
+
 /*----------探索點----------*/
 .spots .cardGrid{
+    margin-top: 32px;
     padding: 0 32px;
     display: flex;
     flex-direction: column;
