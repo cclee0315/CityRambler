@@ -257,7 +257,7 @@
 @media screen and (min-width: 1024px) {
     .spots .cardGrid{
         padding: 0;
-        margin: 0 auto;
+        margin: 64px auto;
         max-width: 1200px;
         display: grid;
         grid-template: repeat(8,183.33px) / repeat(6,183.33px);
