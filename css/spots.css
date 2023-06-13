@@ -61,6 +61,9 @@
 .randomSpot .btnGo{
     text-align: right;
 }
+.randomSpot .btnGo:hover{
+    transform: translateX(25px);
+}
 
 @media screen and (min-width: 1024px) {
     .randomSpot .container{

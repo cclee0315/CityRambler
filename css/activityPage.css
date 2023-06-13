@@ -294,6 +294,9 @@
     right: 0;
     bottom: 0;
 }
+.related .relRoute .content .btnGo:hover{
+    transform: translateX(25px);
+}
 
 @media screen and (min-width: 1024px) {
     .related .relRoute .content{
