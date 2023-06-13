@@ -81,9 +81,11 @@ form button{
     background-color: var(--bg);
     border-style: none;
     cursor: pointer;
+    transition: 0.3s linear;
 }
 form button:hover{
     transform: translateX(25px);
+    transition: 0.3s linear;
 }
 
 @media screen and (min-width: 1024px) {

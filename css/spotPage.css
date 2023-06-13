@@ -257,9 +257,11 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    transition: 0.3s linear;
 }
 .related .relRoute .content .btnGo:hover{
     transform: translateX(25px);
+    transition: 0.3s linear;
 }
 
 @media screen and (min-width: 1024px) {

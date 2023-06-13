@@ -78,9 +78,11 @@
 }
 .randomSpot .btnGo{
     text-align: right;
+    transition: 0.3s linear;
 }
 .randomSpot .btnGo:hover{
     transform: translateX(25px);
+    transition: 0.3s linear;
 }
 
 
