@@ -39,6 +39,8 @@ form input:focus{
     opacity: 0.3;
 }
 form .nameWrap .lastNameWrap{
+    display: flex;
+    flex-direction: column;
     padding: 12px 0; 
     border-bottom: 1px solid var(--main);
 }
