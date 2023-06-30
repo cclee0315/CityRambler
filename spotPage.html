@@ -119,31 +119,29 @@
                 <div class="relRoute">
                     <div class="titleBar">
                         <div class="container">
-                            <h2>相關路線</h2>
-                            <a href="routes.html" class="titleBar_more">更多</a>
+                            <h2>{{relRouteTitle.title}}</h2>
+                            <a :href="relRouteTitle.link" class="titleBar_more">更多</a>
                         </div>
                     </div>
                     <article class="content">
                         <div class="picCards">
-                            <div class="pic dadaocheng_1"><img src="img/dadaocheng_1.png"></div>
-                            <div class="pic dadaocheng_2"><img src="img/dadaocheng_2.png"></div>
-                            <div class="pic dadaocheng_3"><img src="img/dadaocheng_3.png"></div>
+                            <div v-for="pic in picCards" :key="pic.id" :class="'pic dadaocheng_' + pic.class">
+                                <img :src="pic.img" alt="">
+                            </div>
                         </div>
                         <div class="text">
                             <header>
-                                <h3>大稻埕</h3>
-                                <span class="distance">3km（約 1.5 小時）</span>
+                                <h3>{{routes.name}}</h3>
+                                <span class="distance">{{routes.distance}}</span>
                             </header>
                             <p>
-                                這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。
+                                {{routes.description}}
                             </p>
                             <div class="tags">
-                                <a href="#" class="tag">#月老</a>
-                                <a href="#" class="tag">#文青</a>
-                                <a href="#" class="tag">#小吃</a>
+                                <a href="#" v-for="label in labels" class="tag" >{{label}}</a>
                             </div>
                             <div class="btnGo">
-                                <a href="routes.html"><img src="img/btnGo.svg"></a>
+                                <a :href="btnGo.link"><img src="img/btnGo.svg"></a>
                             </div>
                         </div>
                     </article>
@@ -284,7 +282,40 @@
                         openTimeSun: '11:00–18:00'
                     },
 
+                    relRouteTitle: {
+                        title: '相關路線',
+                        link: 'routes.html',
+                    },
 
+                    picCards:[
+                        {
+                            id:1,
+                            class:1,
+                            img:'img/dadaocheng_1.png'
+                        },
+                        {
+                            id:2,
+                            class:2,
+                            img:'img/dadaocheng_2.png'
+                        },
+                        {
+                            id:3,
+                            class:3,
+                            img:'img/dadaocheng_3.png'
+                        }
+                    ],
+
+                    routes:{
+                        title:"路線",
+                        name:"大稻埕",
+                        distance:"3km（約 1.5 小時）",
+                        description:"這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。"
+                    },
+
+                    labels:["#月老","#文青","#小吃"],
+                    btnGo:{
+                        link:"routes.html"
+                    },
 
                     relSpotTitle : {
                         title : '附近探索點',
@@ -316,7 +347,6 @@
                             location : '台北・大同',
                         },
                     ],
-
                     
 
                     relActTitle : {
