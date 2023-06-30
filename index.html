@@ -11,51 +11,181 @@
     <title>城市漫遊 City Rumbler</title>
 </head>
 <body>
-    <!-- 導覽列 -->
-    <header class="topBar">
-        <div class="logoHor">
-            <a href="index.html">
-                <img src="img/logoHor.svg" alt="logo">
-            </a>
-        </div>
-        <div class="location">
-            <div class="pin_icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div class="location_name">中壢</div>
-        </div>
-        <div class="weather">
-            <div class="weather_icon"><i class="fa-solid fa-cloud"></i></div>
-            <div class="weather_degree">22°C</div>
-        </div>
-        <input type="checkbox" id="showMenu">
-        <div class="menu">
-            <label for="showMenu" class="menu_button">
+    <div id="app">
+        <!-- 導覽列 -->
+        <header class="topBar">
+            <div class="logoHor">
+              <a href="index.html">
+                <img src="img/logoHor.svg" alt="logo" />
+              </a>
+            </div>
+            <div class="location">
+              <div class="pin_icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="location_name">{{ location }}</div>
+          </div>
+          <div class="weather">
+              <div class="weather_icon"><i class="fa-solid fa-cloud"></i></div>
+              <div class="weather_degree">{{ weather }}°C</div>
+          </div>
+            <input type="checkbox" id="showMenu" v-model="showMenu" />
+            <div class="menu">
+              <label for="showMenu" class="menu_button">
                 <i class="fa-solid fa-bars"></i>
-            </label>
-            <div class="hiddenMenu" id="menu">
+              </label>
+              <div class="hiddenMenu" id="menu" :class="{ active: showMenu }">
                 <label class="close" for="showMenu">
-                    <i class="fa-solid fa-xmark"></i>
+                  <i class="fa-solid fa-xmark"></i>
                 </label>
                 <div class="logoSqr">
-                    <a href="index.html">
-                        <img src="img/logoSqr.png" alt="首頁">
-                    </a>
+                  <a href="index.html">
+                    <img src="img/logoSqr.png" alt="首頁" />
+                  </a>
                 </div>
                 <nav>
+                  <ul>
+                      <li v-for="item in menuItems" :key="item.id">
+                          <a :href="item.url">{{ item.label }}</a>
+                      </li>
+                  </ul>
+                  </nav>
+                 <div class="SNS">
+                      <div v-for="item in socialLinks" :key="item.id" :class="item.class">
+                          <a :href="item.url"><i :class="item.icon"></i></a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </header>
+        
+        <main>
+            <!-- 引言 -->
+        
+            <section class="intro">
+                <h1>{{intro.title}}</h1>
+                <div class="mainPic">
+                    <img :src="intro.img" alt="groovy man">
+                </div>
+                <p class="intro" v-html="intro.text"></p>
+                <div class="downArrowWide">
+                    <img src="img/downArrowWide.svg" alt="go down">
+                </div>
+            </section>
+        
+            <!-- 跑馬燈 -->
+            <section class="ticker">
+                <div class="tagWrapper first">
                     <ul>
-                        <li>
-                            <a href="routes.html">路線</a>
-                        </li>
-                        <li>
-                            <a href="spots.html">探索點</a>
-                        </li>
-                        <li>
-                            <a href="activities.html">活動</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">聯絡我們</a>
-                        </li>
+                        <li v-for="tag in tags" :key="tag">
+                            <a href="routes.html">{{ tag }}</a></li>
                     </ul>
-                </nav>
+                </div>
+                <div class="tagWrapper second">
+                    <ul>
+                        <li v-for="tag in tags" :key="tag">
+                            <a href="routes.html">{{ tag }}</a></li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 路線 -->
+            <section class="routes" id="routes">
+                <div class="titleBar">
+                    <div class="container">
+                        <h2>{{routes.title}}</h2>
+                        <a href="routes.html" class="titleBar_more">更多</a>
+                    </div>
+                </div>
+                <article class="content">
+                    <div class="picCards">
+                        <div v-for="pic in picCards" :key="pic.id" :class="'pic dadaocheng_' + pic.class">
+                            <img :src="pic.img" alt="">
+                        </div>
+                    </div>
+                    <div class="text">
+                        <header>
+                            <h3>{{routes.name}}</h3>
+                            <span class="distance">{{routes.distance}}</span>
+                        </header>
+                        <p>
+                            {{routes.description}}
+                        </p>
+                        <div class="tags">
+                            <a href="#" v-for="label in labels" class="tag" >{{label}}</a>
+                        </div>
+                        <div class="btnGo">
+                            <a :href="btnGo.link"><img src="img/btnGo.svg"></a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- 探索點 -->
+            <section class="spots">
+                <div class="titleBar">
+                    <div class="container">
+                        <h2>{{spotsTitle.title}}</h2>
+                        <a href="spots.html" class="titleBar_more">更多</a>
+                    </div>
+                </div>
+                <div class="cardGrid">
+                    <div v-for="item in spots" :key="item.id" :class="'card ' + item.class">
+                      <a :href="item.link">
+                        <div class="pic">
+                          <img :src="item.image" alt="">
+                        </div>
+                        <div class="caption">
+                          <div class="tag">{{ item.tag }}</div>
+                          <h3>{{ item.name }}</h3>
+                          <div class="loc">{{ item.location }}</div>
+                        </div>
+                      </a>
+                    </div>
+                </div>
+            </section>
+            <!-- 活動 -->
+            <section class="activities">
+                <div class="titleBar">
+                    <div class="container">
+                        <h2>{{activitiesTitle.title}}</h2>
+                        <a href="activities.html" class="titleBar_more">更多</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="timeline"><img :src="activitiesContent.image" alt=""></div>
+                    <div v-for="item1 in activity" :key="item1.id" :class="'activity act' + item1.class">
+                        <h4 v-html = "item1.title"></h4>
+                        <a href="activityPage.title">
+                            <div class="pic"><img :src="item1.image" alt=""></div>
+                        </a>
+                        <div class="detail">
+                            <div class="loc">{{item1.location}}</div>
+                            <div class="tag">{{item1.tag}}</div>
+                        </div>
+                        <div class="dot"></div>
+                        <div class="date">{{item1.date}}</div>
+                        <div class="time">{{item1.time}}</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- 頁尾 -->
+        <footer>
+            <section class="subscribe">
+                <div class="logo"><img src="img/logoSqrBGC.svg" alt=""></div>
+                <h2>電子報訂閱</h2>
+                <p>加入漫遊者行列，隨時掌握最新漫遊路線資訊</p>
+                <div class="emailInput">
+                    <input type="email" name="" id="" placeholder="請輸入您的 Email">
+                    <a href="#" class="sendBtm"><img src="img/btnGo_Dark.png" alt=""></a>
+                </div>
+            </section>
+            <section class="nav">
+                <div class="menu">
+                    <ul>
+                        <li><a href="routes.html">路線</a></li>
+                        <li><a href="spots.html">探索點</a></li>
+                        <li><a href="activities.html">活動</a></li>
+                        <li><a href="contact.html">聯絡我們</a></li>
+                    </ul>
+                </div>
                 <div class="SNS">
                     <div class="facebook">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -67,281 +197,178 @@
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
-            </div>               
-        </div>
-    </header>
-    
-    <main>
-        <!-- 引言 -->
-        <section class="intro">
-            <h1>城市漫遊</h1>
-            <div class="mainPic"><img src="img/mainPic_index.png" alt="groovy man"></div>
-            <p class="intro">
-                -<br>
-                城市漫遊 City Rambler<br>
-                提供風情萬種的漫遊路線<br>
-                讓您以各種不同的心情與視角<br>
-                探索腳下的這座城市
-            </p>
-            <div class="downArrowWide">
-                <img src="img/downArrowWide.svg" alt="go down">
-            </div>
-        </section>
+            </section>
+            <section class="copyright">
+                <p>
+                    本網站為緯育TibaMe前端工程師班第##期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </section>
+        </footer>
+    </div>
 
-    
-        <!-- 跑馬燈 -->
-        <section class="ticker">
-            <div class="tagWrapper first">
-                <ul>
-                    <li><a href="routes.html">#月老</a></li>
-                    <li><a href="routes.html">#復古時髦</a></li>
-                    <li><a href="routes.html">#咖啡</a></li>
-                    <li><a href="routes.html">#CHILL</a></li>
-                    <li><a href="routes.html">#日系</a></li>
-                    <li><a href="routes.html">#夏日午後</a></li>
-                    <li><a href="routes.html">#幽靈餐車</a></li>
-                    <li><a href="routes.html">#ㄎㄧㄤ</a></li>
-                    <li><a href="routes.html">#露營風</a></li>
-                    <li><a href="routes.html">#文青小物</a></li>
-                    <li><a href="routes.html">#小鳥胃</a></li>
-                    <li><a href="routes.html">#鹿角蕨</a></li>
-                    <li><a href="routes.html">#酷東西</a></li>
-                    <li><a href="routes.html">#小吃</a></li>
-                    <li><a href="routes.html">#酒精</a></li>
-                </ul>
-            </div>
-            <div class="tagWrapper second">
-                <ul>
-                    <li><a href="routes.html">#月老</a></li>
-                    <li><a href="routes.html">#復古時髦</a></li>
-                    <li><a href="routes.html">#咖啡</a></li>
-                    <li><a href="routes.html">#CHILL</a></li>
-                    <li><a href="routes.html">#日系</a></li>
-                    <li><a href="routes.html">#夏日午後</a></li>
-                    <li><a href="routes.html">#幽靈餐車</a></li>
-                    <li><a href="routes.html">#ㄎㄧㄤ</a></li>
-                    <li><a href="routes.html">#露營風</a></li>
-                    <li><a href="routes.html">#文青小物</a></li>
-                    <li><a href="routes.html">#小鳥胃</a></li>
-                    <li><a href="routes.html">#鹿角蕨</a></li>
-                    <li><a href="routes.html">#酷東西</a></li>
-                    <li><a href="routes.html">#小吃</a></li>
-                    <li><a href="routes.html">#酒精</a></li>
-                </ul>
-            </div>
-        </section>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+         Vue.createApp({
+            data() {
+                return {
+                    location: '中壢',
+                    weather: '22',
+                    isMenuOpen: false,
 
-        <!-- 路線 -->
-        <section class="routes" id="routes">
-            <div class="titleBar">
-                <div class="container">
-                    <h2>路線</h2>
-                    <a href="routes.html" class="titleBar_more">更多</a>
-                </div>
-            </div>
-            <article class="content">
-                <div class="picCards">
-                    <div class="pic dadaocheng_1"><img src="img/dadaocheng_1.png"></div>
-                    <div class="pic dadaocheng_2"><img src="img/dadaocheng_2.png"></div>
-                    <div class="pic dadaocheng_3"><img src="img/dadaocheng_3.png"></div>
-                </div>
-                <div class="text">
-                    <header>
-                        <h3>大稻埕</h3>
-                        <span class="distance">3km（約 1.5 小時）</span>
-                    </header>
-                    <p>
-                        這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。
-                    </p>
-                    <div class="tags">
-                        <a href="#" class="tag">#月老</a>
-                        <a href="#" class="tag">#文青</a>
-                        <a href="#" class="tag">#小吃</a>
-                    </div>
-                    <div class="btnGo">
-                        <a href="routes.html"><img src="img/btnGo.svg"></a>
-                    </div>
-                </div>
-            </article>
-        </section>
+                    menuItems: [
+                        { id: 1, label: '路線', url: 'routes.html' },
+                        { id: 2, label: '探索點', url: 'spots.html' },
+                        { id: 3, label: '活動', url: 'activities.html' },
+                        { id: 4, label: '聯絡我們', url: 'contact.html' }
+                    ],
 
-        <!-- 探索點 -->
-        <section class="spots">
-            <div class="titleBar">
-                <div class="container">
-                    <h2>探索點</h2>
-                    <a href="spots.html" class="titleBar_more">更多</a>
-                </div>
-            </div>
-            <div class="cardGrid">
-                <div class="card c01">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardWangsBroth.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">台味小吃</div>
-                            <h3>小王煮瓜</h3>
-                            <div class="loc">台北・萬華</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card c02">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardTaipeiCollect.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">城市綠洲</div>
-                            <h3>台北典藏植物園</h3>
-                            <div class="loc">台北・中山</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card c03">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardNTU.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">書香探索</div>
-                            <h3>國立台灣大學</h3>
-                            <div class="loc">台北・大安</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card c04">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardCloudGate.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">表演場館</div>
-                            <h3>雲門Cloud Gate</h3>
-                            <div class="loc">新北・淡水</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card c05">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardWoden.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">風格選物</div>
-                            <h3>WODEN台北</h3>
-                            <div class="loc">台北・大安</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card c06">
-                    <a href="spotPage.html">
-                        <div class="pic">
-                            <img src="img/cardWarmAir.png" alt="">
-                        </div>
-                        <div class="caption">
-                            <div class="tag">咖啡店</div>
-                            <h3>暖空咖啡</h3>
-                            <div class="loc">桃園・中壢</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
+                    socialLinks: [
+                        { id: 1, class: 'facebook', url: '#', icon: 'fa-brands fa-facebook-f' },
+                        { id: 2, class: 'instagram', url: '#', icon: 'fa-brands fa-instagram' },
+                        { id: 3, class: 'twitter', url: '#', icon: 'fa-brands fa-twitter' }
+                    ],
+                    
+                    intro:{
+                        title:"城市漫遊",
+                        img:"img/mainPic_index.png",
+                        text:"-<br>城市漫遊 City Rambler<br>提供風情萬種的漫遊路線<br>讓您以各種不同的心情與視角<br>探索腳下的這座城市",
+                    },
+                    tags:["#月老","#復古時髦","#咖啡","#CHILL","#日系","#夏日午後","#幽靈餐車","#ㄎㄧㄤ","#露營風","#文青小物","#小鳥胃","#鹿角蕨","#酷東西","#小吃","#酒精"],
+                    routes:{
+                        title:"路線",
+                        name:"大稻埕",
+                        distance:"3km（約 1.5 小時）",
+                        description:"這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。"
+                    },
+                    picCards:[
+                        {
+                            id:1,
+                            class:1,
+                            img:'img/dadaocheng_1.png'
+                        },
+                        {
+                            id:2,
+                            class:2,
+                            img:'img/dadaocheng_2.png'
+                        },
+                        {
+                            id:3,
+                            class:3,
+                            img:'img/dadaocheng_3.png'
+                        }
+                    ],
+                    labels:["#月老","#文青","#小吃"],
+                    btnGo:{
+                        link:"routes.html"
+                    },
 
-        <!-- 活動 -->
-        <section class="activities">
-            <div class="titleBar">
-                <div class="container">
-                    <h2>活動</h2>
-                    <a href="activities.html" class="titleBar_more">更多</a>
-                </div>
-            </div>
-            <div class="content">
-                <div class="timeline"><img src="img/timelineH.svg" alt=""></div>
-                <div class="activity act01">
-                    <h4>"出走"古典生活節-<br>
-                        音樂X市集X美學</h4>
-                    <a href="activityPage.html">
-                        <div class="pic"><img src="img/act01.png" alt=""></div>
-                    </a>
-                    <div class="detail">
-                        <div class="loc">台北・瓶蓋工廠B棟</div>
-                        <div class="tag">#市集 #音樂會</div>
-                    </div>
-                    <div class="dot"></div>
-                    <div class="date">2023.05.14 ㊐</div>
-                    <div class="time">14:00-21:00</div>
-                </div>
-                <div class="activity act02">
-                    <h4>2023 WHATZ<br> 
-                        國際當代藝術博覽會</h4>
-                    <a href="activityPage.html">
-                        <div class="pic"><img src="img/act02.png" alt=""></div>
-                    </a>
-                    <div class="detail">
-                        <div class="loc">台北・喜來登大飯店</div>
-                        <div class="tag">#藝文 #時尚</div>
-                    </div>
-                    <div class="dot"></div>
-                    <div class="date">2023.05.26 ㊄ - 05.28 ㊐ </div>
-                    <div class="time">12:00-19:00</div>
-                </div>
-                <div class="activity act03">
-                    <h4>【街遊 Hidden Taipei】<br>
-                        北車迷城生存指南</h4>
-                    <a href="activityPage.html">
-                        <div class="pic"><img src="img/act03.png" alt=""></div>
-                    </a>
-                    <div class="detail">
-                        <div class="loc">台北・北車Y13地下街</div>
-                        <div class="tag">#公益 #戶外體驗</div>
-                    </div>
-                    <div class="dot"></div>
-                    <div class="date">2023.05.27 ㊅</div>
-                    <div class="time">10:00-12:00</div>
-                </div>
-            </div>
-        </section>
-    </main>
+                    spotsTitle : {
+                        title : '探索點',
+                        link : 'spots.html',
+                    },
+                    
+                    spots : [
+                        {
+                            id: 1,
+                            class: 'c01',
+                            link : 'spotPage.html',
+                            image : 'img/cardWangsBroth.png',
+                            tag : '台味小吃',
+                            name : '小王煮瓜',
+                            location : '台北・萬華',
+                        },
+                        {
+                            id: 2,
+                            class: 'c02',
+                            link : 'spotPage.html',
+                            image : 'img/cardTaipeiCollect.png',
+                            tag : '城市綠洲',
+                            name : '台北典藏植物園',
+                            location : '台北・中山',
+                        },
+                        {   
+                            id: 3,
+                            class: 'c03',
+                            link : 'spotPage.html',
+                            image : 'img/cardNTU.png',
+                            tag : '書香探索',
+                            name : '國立台灣大學',
+                            location : '台北・大安',
+                        },
+                        {
+                            id: 4,
+                            class: 'c04',
+                            link : 'spotPage.html',
+                            image : 'img/cardCloudGate.png',
+                            tag : '表演場館',
+                            name : '雲門Cloud Gate',
+                            location : '新北・淡水',
+                        },
+                        {
+                            id: 5,
+                            class: 'c05',
+                            link : 'spotPage.html',
+                            image : 'img/cardWoden.png',
+                            tag : '風格選物',
+                            name : 'WODEN台北',
+                            location : '台北・大安',
+                        },
+                        {
+                            id: 6,
+                            class: 'c06',
+                            link : 'spotPage.html',
+                            image : 'img/cardWarmAir.png',
+                            tag : '咖啡店',
+                            name : '暖空咖啡',
+                            location : '桃園・中壢',
+                        },
+                    ],
 
-    <!-- 頁尾 -->
-    <footer>
-        <section class="subscribe">
-            <div class="logo"><img src="img/logoSqrBGC.svg" alt=""></div>
-            <h2>電子報訂閱</h2>
-            <p>加入漫遊者行列，隨時掌握最新漫遊路線資訊</p>
-            <div class="emailInput">
-                <input type="email" name="" id="" placeholder="請輸入您的 Email">
-                <a href="#" class="sendBtm"><img src="img/btnGo_Dark.png" alt=""></a>
-            </div>
-        </section>
-        <section class="nav">
-            <div class="menu">
-                <ul>
-                    <li><a href="routes.html">路線</a></li>
-                    <li><a href="spots.html">探索點</a></li>
-                    <li><a href="activities.html">活動</a></li>
-                    <li><a href="contact.html">聯絡我們</a></li>
-                </ul>
-            </div>
-            <div class="SNS">
-                <div class="facebook">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-                <div class="instagram">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <div class="twitter">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
-        </section>
-        <section class="copyright">
-            <p>
-                本網站為緯育TibaMe前端工程師班第##期學員專題作品，本平台僅供學習、展示之用。
-            </p>
-        </section>
-    </footer>
+                    activitiesTitle : {
+                        title : '活動',
+                        link : 'activities.html',
+                    },
+
+                    activitiesContent : {
+                        image : 'img/timelineH.svg',
+                    },
+
+                    activity : [
+                        {
+                            id: 1,
+                            class: '01',
+                            title : '"出走"古典生活節-<br>音樂X市集X美學',
+                            image : 'img/act01.png',
+                            location : '台北・瓶蓋工廠B棟',
+                            tag : '#市集 #音樂會',
+                            date : '2023.05.14 ㊐',
+                            time : '14:00-21:00',
+                        },
+                        {
+                            id: 2,
+                            class: '02',
+                            title : '2023 WHATZ <br> 國際當代藝術博覽會',
+                            image : 'img/act02.png',
+                            location : '台北・喜來登大飯店',
+                            tag : '#藝文 #時尚',
+                            date : '2023.05.26 ㊄ - 05.28 ㊐',
+                            time : '12:00-19:00',
+                        },
+                        {
+                            id: 3,
+                            class: '03',
+                            title : '【街遊 Hidden Taipei】<br> 北車迷城生存指南',
+                            image : 'img/act03.png',
+                            location : '台北・北車Y13地下街',
+                            tag : '#公益 #戶外體驗',
+                            date : '2023.05.27 ㊅',
+                            time : '10:00-12:00',
+                        },
+                    ],
+
+                };
+            },
+        }).mount("#app")
+    </script>
 </body>
 </html>

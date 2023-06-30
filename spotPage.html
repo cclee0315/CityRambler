@@ -11,51 +11,215 @@
     <title>城市漫遊 City Rumbler｜探索點｜SIDOLI RADIO 小島裡</title>
 </head>
 <body>
-    <!-- 導覽列 -->
-    <header class="topBar">
-        <div class="logoHor">
-            <a href="index.html">
-                <img src="img/logoHor.svg" alt="logo">
-            </a>
-        </div>
-        <div class="location">
-            <div class="pin_icon"><i class="fa-solid fa-location-dot"></i></div>
-            <div class="location_name">中壢</div>
-        </div>
-        <div class="weather">
-            <div class="weather_icon"><i class="fa-solid fa-cloud"></i></div>
-            <div class="weather_degree">22°C</div>
-        </div>
-        <input type="checkbox" id="showMenu">
-        <div class="menu">
-            <label for="showMenu" class="menu_button">
+    <div id="app">
+        <!-- 導覽列 -->
+        <header class="topBar">
+            <div class="logoHor">
+              <a href="index.html">
+                <img src="img/logoHor.svg" alt="logo" />
+              </a>
+            </div>
+            <div class="location">
+              <div class="pin_icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="location_name">{{ location }}</div>
+          </div>
+          <div class="weather">
+              <div class="weather_icon"><i class="fa-solid fa-cloud"></i></div>
+              <div class="weather_degree">{{ weather }}°C</div>
+          </div>
+            <input type="checkbox" id="showMenu" v-model="showMenu" />
+            <div class="menu">
+              <label for="showMenu" class="menu_button">
                 <i class="fa-solid fa-bars"></i>
-            </label>
-            <div class="hiddenMenu">
+              </label>
+              <div class="hiddenMenu" id="menu" :class="{ active: showMenu }">
                 <label class="close" for="showMenu">
-                    <i class="fa-solid fa-xmark"></i>
+                  <i class="fa-solid fa-xmark"></i>
                 </label>
                 <div class="logoSqr">
-                    <a href="index.html">
-                        <img src="img/logoSqr.png" alt="首頁">
-                    </a>
+                  <a href="index.html">
+                    <img src="img/logoSqr.png" alt="首頁" />
+                  </a>
                 </div>
                 <nav>
+                  <ul>
+                      <li v-for="item in menuItems" :key="item.id">
+                          <a :href="item.url">{{ item.label }}</a>
+                      </li>
+                  </ul>
+                  </nav>
+                 <div class="SNS">
+                      <div v-for="item in socialLinks" :key="item.id" :class="item.class">
+                          <a :href="item.url"><i :class="item.icon"></i></a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </header>
+        <main>
+            <!-- 景點文章 -->
+            <div class="spotWrap">
+                <div class="breadcrumb">
+                    <div class="container">
+                        <a href="index.html">城市漫遊</a> ＞ <a href="spots.html">探索點</a> ＞ <a href="#" class="now">SIDOLI RADIO 小島裡</a>
+                    </div>
+                </div>
+                <article class="spot">
+                    <header>
+                        <h1>{{spotArticle.title}}</h1>
+                        <div class="loc">{{spotArticle.loc}}</div>
+                        <div class="tag">{{spotArticle.tag}}</div>
+                        <p class="brief">
+                            {{spotArticle.brief}}
+                        </p>
+                    </header>
+                    <div class="coverPic">
+                        <img :src="spotArticle.coverPicSrc" :alt="spotArticle.coverPicAlt">
+                    </div>
+                    <div class="article">
+                        <p>
+                            {{spotArticle.artSec1}}
+                        </p>
+                        <p>
+                            {{spotArticle.artSec2}}
+                        </p>
+                        <p>
+                            {{spotArticle.artSec3}}
+                        </p>
+                        <p>
+                            {{spotArticle.artSec4}}
+                        </p>
+                    </div>
+                    <div class="info">
+                        <div class="add">
+                            <div class="title">地址</div>
+                            <p class="content">{{spotArticle.add}}</p>
+                        </div>
+                        <div class="tel">
+                            <div class="title">電話</div>
+                            <p class="content">{{spotArticle.tel}}</p>
+                        </div>
+                        <div class="openTime">
+                            <div class="title">營業時間</div>
+                            <p class="content">
+                                星期一｜{{spotArticle.openTimeMon}}<br>
+                                星期二｜{{spotArticle.openTimeTue}}<br>
+                                星期三｜{{spotArticle.openTimeWed}}<br>
+                                星期四｜{{spotArticle.openTimeThu}}<br>
+                                星期五｜{{spotArticle.openTimeFri}}<br>
+                                星期六｜{{spotArticle.openTimeSat}}<br>
+                                星期日｜{{spotArticle.openTimeSun}}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <aside class="related">
+                <!-- 相關路線 -->
+                <div class="relRoute">
+                    <div class="titleBar">
+                        <div class="container">
+                            <h2>相關路線</h2>
+                            <a href="routes.html" class="titleBar_more">更多</a>
+                        </div>
+                    </div>
+                    <article class="content">
+                        <div class="picCards">
+                            <div class="pic dadaocheng_1"><img src="img/dadaocheng_1.png"></div>
+                            <div class="pic dadaocheng_2"><img src="img/dadaocheng_2.png"></div>
+                            <div class="pic dadaocheng_3"><img src="img/dadaocheng_3.png"></div>
+                        </div>
+                        <div class="text">
+                            <header>
+                                <h3>大稻埕</h3>
+                                <span class="distance">3km（約 1.5 小時）</span>
+                            </header>
+                            <p>
+                                這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。
+                            </p>
+                            <div class="tags">
+                                <a href="#" class="tag">#月老</a>
+                                <a href="#" class="tag">#文青</a>
+                                <a href="#" class="tag">#小吃</a>
+                            </div>
+                            <div class="btnGo">
+                                <a href="routes.html"><img src="img/btnGo.svg"></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- 附近探索點 -->
+                <div class="relSpot">
+                    <div class="titleBar">
+                        <div class="container">
+                            <h2>{{relSpotTitle.title}}</h2>
+                            <a href="spots.html" class="titleBar_more">更多</a>
+                        </div>
+                    </div>
+                    <div class="cardGrid">
+                        <div v-for="item in relSpot" :key="item.id" :class="'card ' + item.class">
+                            <a href="spotPage.html">
+                            <div class="pic">
+                            <img :src="item.image" alt="">
+                            </div>
+                            <div class="caption">
+                            <div class="tag">{{ item.tag }}</div>
+                            <h3>{{ item.name }}</h3>
+                            <div class="loc">{{ item.location }}</div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                </div>        
+                    
+                <!-- 附近活動 -->
+                <div class="relAct">
+                    <div class="titleBar">
+                        <div class="container">
+                            <h2>{{relActTitle.title}}</h2>
+                            <a href="activities.html" class="titleBar_more">更多</a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="timeline"><img :src="relActContent.image" alt=""></div>
+
+                        <div v-for="item1 in  relAct" :key="item1.id" :class="'activity act' + item1.class">
+                            <h4 v-html = "item1.title"></h4>
+                            <a href="activityPage.html">
+                                <div class="pic"><img :src="item1.image" alt=""></div>
+                            </a>
+                            <div class="detail">
+                                <div class="loc">{{item1.location}}</div>
+                                <div class="tag">{{item1.tag}}</div>
+                            </div>
+                            <div class="dot"></div>
+                            <div class="date">{{item1.date}}</div>
+                            <div class="time">{{item1.time}}</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        <!-- 頁尾 -->
+        <footer>
+            <section class="subscribe">
+                <div class="logo"><img src="img/logoSqrBGC.svg" alt=""></div>
+                <h2>電子報訂閱</h2>
+                <p>加入漫遊者行列，隨時掌握最新漫遊路線資訊</p>
+                <div class="emailInput">
+                    <input type="email" name="" id="" placeholder="請輸入您的 Email">
+                    <a href="#" class="sendBtm"><img src="img/btnGo_Dark.png" alt=""></a>
+                </div>
+            </section>
+            <section class="nav">
+                <div class="menu">
                     <ul>
-                        <li>
-                            <a href="routes.html">路線</a>
-                        </li>
-                        <li>
-                            <a href="spots.html">探索點</a>
-                        </li>
-                        <li>
-                            <a href="activities.html">活動</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">聯絡我們</a>
-                        </li>
+                        <li><a href="routes.html">路線</a></li>
+                        <li><a href="spots.html">探索點</a></li>
+                        <li><a href="activities.html">活動</a></li>
+                        <li><a href="contact.html">聯絡我們</a></li>
                     </ul>
-                </nav>
+                </div>
                 <div class="SNS">
                     <div class="facebook">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -67,244 +231,139 @@
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                     </div>
                 </div>
-            </div>               
-        </div>
-    </header>
+            </section>
+            <section class="copyright">
+                <p>
+                    本網站為緯育TibaMe前端工程師班第##期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </section>
+        </footer>
+    </div>
 
-    <main>
-        <!-- 景點文章 -->
-        <div class="spotWrap">
-            <div class="breadcrumb">
-                <div class="container">
-                    <a href="index.html">城市漫遊</a> ＞ <a href="spots.html">探索點</a> ＞ <a href="#" class="now">SIDOLI RADIO 小島裡</a>
-                </div>
-            </div>
-            <article class="spot">
-                <header>
-                    <h1>SIDOLI RADIO 小島裡</h1>
-                    <div class="loc">台北・大同</div>
-                    <div class="tag">#咖啡 #錄音室 #在地保存</div>
-                    <p class="brief">
-                        一個以聲音為載體的新概場域，結合錄音室、唱片行、咖啡、選物的新空間。
-                    </p>
-                </header>
-                <div class="coverPic">
-                    <img src="img/spotSidoli_cover.png" alt="小島裡店面">
-                </div>
-                <div class="article">
-                    <p>
-                        被疫情影響的時代裡，我們感受到所有該珍惜的事物都正快速消失，或被時空之隔而遠離，因此在這迎向變動的時刻，我們希望透過聲音的留存與記錄，做一件儲藏情感並富有心靈的事，送給每個人。
-                    </p>
-                    <p>
-                        本計畫將以「聲音」為媒介，透過聽覺感受刺激想像，挖掘屬於臺灣地方的深度內容體驗，走進並還原現場，收集、模擬地方區域當下的一切聲音，再透過設計形塑聲音的立體還原，以非傳統書面、文字的方式讓大眾重新閱聽深度地方文化的另一面相，創造具有沈浸感受的文化旅遊體驗。
-                    </p>
-                    <p>
-                        同時，本團隊也將啟動聲音場域「SIDOLI RADIO 小島裡」的營運，一個以聲音為載體的新概場域，結合錄音室、唱片行、咖啡、選物的新空間，地點位於台北市大同區的大稻埕，期許連結在地街區，收藏更多動人故事。盼找出屬於臺灣各個地方的深度內容，結合設計加值的思維，建立屬地的「聲音圖書館」，也以文化路徑為最終發展目標，複製延伸到全台灣各地。
-                    </p>
-                    <p>
-                        SIDOLI 亦即「Story」，以 15 分鐘為單位，每個人在此留下一刻故事。它可以是一段記憶，可以是一段告白，可以是一段人生經驗，可以是一段陪伴的分享；您所儲存記錄的這些話語，都將是豐富這個時代文化厚度的「聲音圖書館」之珍貴音源，以故事為地標，組成屬於台灣記憶的聲景地圖。
-                    </p>
-                </div>
-                <div class="info">
-                    <div class="add">
-                        <div class="title">地址</div>
-                        <p class="content">台北市大同區長安西路245號一樓</p>
-                    </div>
-                    <div class="tel">
-                        <div class="title">電話</div>
-                        <p class="content">02-2552-5300</p>
-                    </div>
-                    <div class="openTime">
-                        <div class="title">營業時間</div>
-                        <p class="content">
-                            星期一｜休息<br>
-                            星期二｜休息<br>
-                            星期三｜11:00–18:00<br>
-                            星期四｜11:00–18:00<br>
-                            星期五｜11:00–18:00<br>
-                            星期六｜11:00–18:00<br>
-                            星期日｜11:00–18:00
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <aside class="related">
-            <!-- 相關路線 -->
-            <div class="relRoute">
-                <div class="titleBar">
-                    <div class="container">
-                        <h2>相關路線</h2>
-                        <a href="routes.html" class="titleBar_more">更多</a>
-                    </div>
-                </div>
-                <article class="content">
-                    <div class="picCards">
-                        <div class="pic dadaocheng_1"><img src="img/dadaocheng_1.png"></div>
-                        <div class="pic dadaocheng_2"><img src="img/dadaocheng_2.png"></div>
-                        <div class="pic dadaocheng_3"><img src="img/dadaocheng_3.png"></div>
-                    </div>
-                    <div class="text">
-                        <header>
-                            <h3>大稻埕</h3>
-                            <span class="distance">3km（約 1.5 小時）</span>
-                        </header>
-                        <p>
-                            這是台灣最古老的商業街區之一，保存了許多傳統店鋪和古色古香的建築。您可以在這裡品嘗到當地的小吃和特色商品，同時也可以體驗到台灣的傳統文化和商業氛圍。
-                        </p>
-                        <div class="tags">
-                            <a href="#" class="tag">#月老</a>
-                            <a href="#" class="tag">#文青</a>
-                            <a href="#" class="tag">#小吃</a>
-                        </div>
-                        <div class="btnGo">
-                            <a href="routes.html"><img src="img/btnGo.svg"></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <!-- 附近探索點 -->
-            <div class="relSpot">
-                <div class="titleBar">
-                    <div class="container">
-                        <h2>附近探索點</h2>
-                        <a href="spots.html" class="titleBar_more">更多</a>
-                    </div>
-                </div>
-                <div class="cardGrid">
-                    <div class="card c01">
-                        <a href="spotPage.html">
-                            <div class="pic">
-                                <img src="img/spotADLP_sqr.png" alt="">
-                            </div>
-                            <div class="caption">
-                                <div class="tag">風格選物</div>
-                                <h3>A Design&Life
-                                    Pj</h3>
-                                <div class="loc">台北・大同</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card c02">
-                        <a href="spotPage.html">
-                            <div class="pic">
-                                <img src="img/spotXiahai_sqr.png" alt="">
-                            </div>
-                            <div class="caption">
-                                <div class="tag">月老最高</div>
-                                <h3>霞海城隍廟</h3>
-                                <div class="loc">台北・大同</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card c03">
-                        <a href="spotPage.html">
-                            <div class="pic">
-                                <img src="img/spotWineHehe_sqr.png" alt="">
-                            </div>
-                            <div class="caption">
-                                <div class="tag">酒精補充</div>
-                                <h3>喝喝 WINE HĒHĒ</h3>
-                                <div class="loc">台北・大同</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>        
-            <!-- 附近活動 -->
-            <div class="relAct">
-                <div class="titleBar">
-                    <div class="container">
-                        <h2>附近活動</h2>
-                        <a href="activities.html" class="titleBar_more">更多</a>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="timeline"><img src="img/timelineH.svg" alt=""></div>
-                    <div class="activity act01">
-                        <h4>大稻埕紅酒喜劇做起來！
-                            <br>OPEN MIC</h4>
-                        <a href="activityPage.html">
-                            <div class="pic"><img src="img/actOpenMic.png" alt=""></div>
-                        </a>
-                        <div class="detail">
-                            <div class="loc">台北‧喝喝 WINE HĒHĒ</div>
-                            <div class="tag">#酒精 #喜劇</div>
-                        </div>
-                        <div class="dot"></div>
-                        <div class="date">2023.05.25 ㊃</div>
-                        <div class="time">20:00-21:30</div>
-                    </div>
-                    <div class="activity act02">
-                        <h4>2023 WHATZ<br> 
-                            國際當代藝術博覽會</h4>
-                        <a href="activityPage.html">
-                            <div class="pic"><img src="img/act02.png" alt=""></div>
-                        </a>
-                        <div class="detail">
-                            <div class="loc">台北・喜來登大飯店</div>
-                            <div class="tag">#藝文 #時尚</div>
-                        </div>
-                        <div class="dot"></div>
-                        <div class="date">2023.05.26 ㊄ - 05.28 ㊐ </div>
-                        <div class="time">12:00-19:00</div>
-                    </div>
-                    <div class="activity act03">
-                        <h4>【街遊 Hidden Taipei】<br>
-                            北車迷城生存指南</h4>
-                        <a href="activityPage.html">
-                            <div class="pic"><img src="img/act03.png" alt=""></div>
-                        </a>
-                        <div class="detail">
-                            <div class="loc">台北・北車Y13地下街</div>
-                            <div class="tag">#公益 #戶外體驗</div>
-                        </div>
-                        <div class="dot"></div>
-                        <div class="date">2023.05.27 ㊅</div>
-                        <div class="time">10:00-12:00</div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+         Vue.createApp({
+            data() {
+                return {
+                    location: '中壢',
+                    weather: '22',
+                    isMenuOpen: false,
 
-    <!-- 頁尾 -->
-    <footer>
-        <section class="subscribe">
-            <div class="logo"><img src="img/logoSqrBGC.svg" alt=""></div>
-            <h2>電子報訂閱</h2>
-            <p>加入漫遊者行列，隨時掌握最新漫遊路線資訊</p>
-            <div class="emailInput">
-                <input type="email" name="" id="" placeholder="請輸入您的 Email">
-                <a href="#" class="sendBtm"><img src="img/btnGo_Dark.png" alt=""></a>
-            </div>
-        </section>
-        <section class="nav">
-            <div class="menu">
-                <ul>
-                    <li><a href="routes.html">路線</a></li>
-                    <li><a href="spots.html">探索點</a></li>
-                    <li><a href="activities.html">活動</a></li>
-                    <li><a href="contact.html">聯絡我們</a></li>
-                </ul>
-            </div>
-            <div class="SNS">
-                <div class="facebook">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                </div>
-                <div class="instagram">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-                <div class="twitter">
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                </div>
-            </div>
-        </section>
-        <section class="copyright">
-            <p>
-                本網站為緯育TibaMe前端工程師班第##期學員專題作品，本平台僅供學習、展示之用。
-            </p>
-        </section>
-    </footer>
+                    menuItems: [
+                        { id: 1, label: '路線', url: 'routes.html' },
+                        { id: 2, label: '探索點', url: 'spots.html' },
+                        { id: 3, label: '活動', url: 'activities.html' },
+                        { id: 4, label: '聯絡我們', url: 'contact.html' }
+                    ],
+
+                    socialLinks: [
+                        { id: 1, class: 'facebook', url: '#', icon: 'fa-brands fa-facebook-f' },
+                        { id: 2, class: 'instagram', url: '#', icon: 'fa-brands fa-instagram' },
+                        { id: 3, class: 'twitter', url: '#', icon: 'fa-brands fa-twitter' }
+                    ],
+
+                    spotArticle: {
+                        title: 'SIDOLI RADIO 小島裡',
+                        loc: '台北・大同',
+                        tag: '#咖啡 #錄音室 #在地保存',
+                        brief: '一個以聲音為載體的新概場域，結合錄音室、唱片行、咖啡、選物的新空間。',
+                        coverPicSrc: 'img/spotSidoli_cover.png',
+                        coverPicAlt: '小島裡店面',
+                        artSec1: '被疫情影響的時代裡，我們感受到所有該珍惜的事物都正快速消失，或被時空之隔而遠離，因此在這迎向變動的時刻，我們希望透過聲音的留存與記錄，做一件儲藏情感並富有心靈的事，送給每個人。',
+                        artSec2: '本計畫將以「聲音」為媒介，透過聽覺感受刺激想像，挖掘屬於臺灣地方的深度內容體驗，走進並還原現場，收集、模擬地方區域當下的一切聲音，再透過設計形塑聲音的立體還原，以非傳統書面、文字的方式讓大眾重新閱聽深度地方文化的另一面相，創造具有沈浸感受的文化旅遊體驗。',
+                        artSec3: '同時，本團隊也將啟動聲音場域「SIDOLI RADIO 小島裡」的營運，一個以聲音為載體的新概場域，結合錄音室、唱片行、咖啡、選物的新空間，地點位於台北市大同區的大稻埕，期許連結在地街區，收藏更多動人故事。盼找出屬於臺灣各個地方的深度內容，結合設計加值的思維，建立屬地的「聲音圖書館」，也以文化路徑為最終發展目標，複製延伸到全台灣各地。',
+                        artSec4: 'SIDOLI 亦即「Story」，以 15 分鐘為單位，每個人在此留下一刻故事。它可以是一段記憶，可以是一段告白，可以是一段人生經驗，可以是一段陪伴的分享；您所儲存記錄的這些話語，都將是豐富這個時代文化厚度的「聲音圖書館」之珍貴音源，以故事為地標，組成屬於台灣記憶的聲景地圖。',
+                        add: '台北市大同區長安西路245號一樓',
+                        tel: '02-2552-5300',
+                        openTimeMon: '休息',
+                        openTimeTue: '休息',
+                        openTimeWed: '11:00–18:00',
+                        openTimeThu: '11:00–18:00',
+                        openTimeFri: '11:00–18:00',
+                        openTimeSat: '11:00–18:00',
+                        openTimeSun: '11:00–18:00'
+                    },
+
+
+
+                    relSpotTitle : {
+                        title : '附近探索點',
+                    },
+                    
+                    relSpot : [
+                        {
+                            id: 1,
+                            class: 'c01',
+                            image : 'img/spotADLP_sqr.png',
+                            tag : '風格選物',
+                            name : 'A Design&Life Pj',
+                            location : '台北・大同',
+                        },
+                        {
+                            id: 2,
+                            class: 'c02',
+                            image : 'img/spotXiahai_sqr.png',
+                            tag : '月老最高',
+                            name : '霞海城隍廟',
+                            location : '台北・大同',
+                        },
+                        {
+                            id: 3,
+                            class: 'c03',
+                            image : 'img/spotWineHehe_sqr.png',
+                            tag : '酒精補充',
+                            name : '喝喝 WINE HĒHĒ',
+                            location : '台北・大同',
+                        },
+                    ],
+
+                    
+
+                    relActTitle : {
+                        title : '活動',
+                    },
+
+                    relActContent : {
+                        image : 'img/timelineH.svg',
+                    },
+
+                    relAct : [
+                        {
+                            id: 1,
+                            class: '01',
+                            title : '大稻埕紅酒喜劇做起來！<br> OPEN MIC',
+                            image : 'img/actOpenMic.png',
+                            location : '台北‧喝喝 WINE HĒHĒ',
+                            tag : '#酒精 #喜劇',
+                            date : '2023.05.25 ㊃',
+                            time : '20:00-21:30',
+                        },
+                        {
+                            id: 2,
+                            class: '02',
+                            title : '2023 WHATZ<br> 國際當代藝術博覽會',
+                            image : 'img/act02.png',
+                            location : '台北・喜來登大飯店',
+                            tag : '#藝文 #時尚',
+                            date : '2023.05.26 ㊄ - 05.28 ㊐',
+                            time : '12:00-19:00',
+                        },
+                        {
+                            id: 3,
+                            class: '03',
+                            title : '【街遊 Hidden Taipei】<br> 北車迷城生存指南',
+                            image : 'img/act03.png',
+                            location : '台北・北車Y13地下街',
+                            tag : '#公益 #戶外體驗',
+                            date : '2023.05.27 ㊅',
+                            time : '10:00-12:00',
+                        },
+                    ],
+
+                };
+            },
+        }).mount("#app")
+    </script>
+
 </body>
 </html>
